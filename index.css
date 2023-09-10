@@ -1,10 +1,10 @@
 body,html {
-    padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
     font-family: 'Comfortaa', cursive;
-    font-weight:bold;
-    color:#fff;
-    background:rgb(0, 0, 0);
+    font-weight: bold;
+    color: #fff;
+    background: #ff66b2; /* Set the background color to pink */
     scroll-behavior: smooth;
 }
 #loading {
