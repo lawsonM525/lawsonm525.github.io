@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homework 1</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            background-color: pink;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            background-color: #ffb6c1;
+        }
+
+        table {
+            margin: 30px auto;
+            border-radius: 15px !important;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        td, th {
+            padding: 20px !important;
+        }
+
+        td a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            margin: -20px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        td a:hover {
+            background-color: #444;
+            border-radius: 12px;
+        }
+
+        h1, h2 {
+            margin: 30px 0;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-buttons">
+            <a href="Tutorials/tutorial-1-basic.html">
+                <button>T1 - Basics</button>
+            </a>
+            <a href="Tutorials/tutorial-2-attributes.html">
+                <button>T2 - Attributes</button>
+            </a>
+            <a href="Tutorials/tutorial-3-headings.html">
+                <button>T3 - Headings</button>
+            </a>
+            <a href="Tutorials/tutorial-4-formatting.html">
+                <button>T4 - Formatting</button>
+            </a>
+            <a href="Tutorials/tutorial-5-quotations.html">
+                <button>T5 - Quotations</button>
+            </a>
+            <a href="Tutorials/tutorial-6-links.html">
+                <button>T6 - Links</button>
+            </a>
+            <a href="Tutorials/tutorial-7-images.html">
+                <button>T7 - Images</button>
+            </a>
+            <a href="Tutorials/tutorial-8-tables.html">
+                <button>T8 - Tables</button>
+            </a>
+            <a href="Tutorials/tutorial-9-lists.html">
+                <button>T9 - Lists</button>
+            </a>
+        </div>
+    </div>
+    <h1>Michelle's Planner</h1>
+
+    <p> Watch this video for motivation!</p>
+    <button onclick="window.location.href='https://www.youtube.com/watch?v=SBYvuAtaUtA'">Watch me!</button>
+    <h2> My Schedule:</h2>
+    <p> You can click on the classes to learn more about them!</p>
+
+    <table style="width: 100%; border: 1px solid black; border-collapse: collapse; text-align: center; font-family: sans-serif; font-size: 20px; font-weight: bold; color: white; background-color: black;">
+        <tr style="background-color: #333; color: white;">
+            <th style="padding: 15px;">Time Block</th>
+            <th style="padding: 15px;">Monday</th>
+            <th style="padding: 15px;">Tuesday</th>
+            <th style="padding: 15px;">Wednesday</th>    
+            <th style="padding: 15px;">Thursday</th>
+            <th style="padding: 15px;">Friday</th>
+        </tr>
+        <tr style="border-bottom: 1px solid white;">
+            <td style="padding: 15px;">9:25 - 10:40</td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;"><a href="network-security.html" style="color: white; text-decoration: none;"> Network Security</a></td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;"><a href="network-security.html" style="color: white; text-decoration: none;">Network Security</a></td>
+        </tr>
+        <tr style="border-bottom: 1px solid white;">
+            <td style="padding: 15px;">10:50 - 12:05</td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;"><a href="linear-algebra.html" style="color: white; text-decoration: none;">Linear Algebra</a></td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;"><a href="linear-algebra.html" style="color: white; text-decoration: none;">Linear Algebra</a></td>
+            <td style="padding: 15px;">Nada</td>
+        </tr>
+        <tr style="border-bottom: 1px solid white;">
+            <td style="padding: 15px;">1:20 - 2:35</td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;"><a href="public-speaking.html" style="color: white; text-decoration: none;">Public Speaking</a></td>
+            <td style="padding: 15px;"><a href="web-programming.html" style="color: white; text-decoration: none;">Web Programming</a></td>
+            <td style="padding: 15px;"><a href="public-speaking.html" style="color: white; text-decoration: none;">Public Speaking</a></td>
+            <td style="padding: 15px;">Nada</td>
+        </tr>
+        <tr style="border-bottom: 1px solid white;">
+            <td style="padding: 15px;">2:45 - 4:00</td>
+            <td style="padding: 15px;">Nada</td>
+            <td style="padding: 15px;"><a href="econ-of-education.html" style="color: white; text-decoration: none;">Econ of Education</a></td>
+            <td style="padding: 15px;"><a href="web-programming.html" style="color: white; text-decoration: none;">Web Programming</a></td>
+            <td style="padding: 15px;"><a href="econ-of-education.html" style="color: white; text-decoration: none;">Econ of Education</a></td>
+            <td style="padding: 15px;">Nada</td>
+        </tr>
+    </table>
+</body>
+</html>
