@@ -1,0 +1,37 @@
+Instructor: Prof. Ileana Streinu
+
+In-class TA: Alexandra Camero
+
+Url: http://cs.smith.edu/~istreinu
+Moodle site: used for class organization, materials, handouts, demos.
+Class meetings:
+Location: Sabin Reed 220 In-person.
+Date and Time: W 1:20pm-4:00pm.
+Class zoom (for special circumstances): https://smith.zoom.us/j/96855067723
+
+Attendance policy: class attendance is an intrinsic part of the educational process and you are required to attend and be active during class time. EXCEPTION: if you feel sick, have flu-like symptoms (even mild ones), please isolate, notify the professor via email that you will miss the class, and follow the College's protocol. Discuss with the professor, preferably via zoom, all class-related concerns and manners in which you can make up for missed work and get back to speed.
+Professor's Office hrs: M Tu after class via zoom or phone call, as follows:
+By request on M and Tu evening 7-9 pm
+Sign up here for the office hours at least an hour in advance from the chosen time/date. If no one signs up the professor may not show up for office hours
+Zoom Link: https://smith.zoom.us/j/96855067723
+Alexandra's Office hrs (in person Ford 242): 
+By request on M and F from 12:30pm to 2:30pm
+Sign up here at least an hour in advance. If no one signs up the TA may not show up for office hours.
+
+Contact Information:
+(tentative) csc209smith@gmail.com (for all class-related questions; to be used only by 209 students)
+istreinu@smith.edu (preferably only non-209 related)
+abejarano@smith.edu 
+TEXTBOOK: none. We use freely available on line documentation, tutorials and other materials. Links will be posted on moodle.
+
+OTHER RESOURCES: demos; handouts posted on Moodle.
+
+IMPORTANT: Before our first day of class (Wednesday Jan 29), all students registered for this course should have the software described on the Software wiki installed on their laptop. If you are experiencing installation issues following the first class, make sure you sign up for office hours to receive assistance as soon as possible.
+
+READINGS and TUTORIALS: each week (for the first 7-8 weeks) you will have a series of readings/tutorials from the on-line site W3Schools. These tutorials will started in class. You must submit your in-class work on the tutorials to Moodle by 3:00pm each class. The complete tutorials must be submitted to Moodle before Friday of the same week at midnight (11:59pm).
+
+LAB WORK. During each class, students must submit all lab work done by the end of the class (4:00pm, +/- 15 min). Afterwards, you are encouraged to continue and finish the lab work by the end of the day (11:59pm). This way, you can bring up all technical issues you have encountered to the attention of the professor, before the next class meeting.
+
+WEEKLY HOMEWORKS. Posted on Wednesday (by the end of the day). Due: by 11:59pm on the following Tuesday. Each homework starts with a series of Tutorial exercises which must be completed and submitted by 11:59pm the Friday before the homework is due.
+
+LATENESS POLICY: Late homework will not be accepted. See details below under Coursework and Grading.
