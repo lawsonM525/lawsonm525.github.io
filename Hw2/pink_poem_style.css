@@ -1,0 +1,91 @@
+body {
+    background-color: #ffe4e1;
+    color: #ff69b4;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #fb92d1;
+    border-radius: 10px;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: rgb(255, 68, 171);
+    box-shadow: 0 0 10px rgba(255, 36, 156, 0.9);
+}
+
+.poem-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff0f5;
+    border: 2px dashed #ffb6c1;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+}
+
+.poem-title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff1493;
+}
+
+.poem-author {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ff69b4;
+}
+
+.stanza {
+    margin-bottom: 30px;
+}
+
+.line {
+    margin-bottom: 10px;
+}
+
+em {
+    color: #ff69b4;
+    font-style: italic;
+}
+
+blockquote {
+    border-left: 5px solid #ffb6c1;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: #ff69b4;
+    font-style: italic;
+}
+
+a {
+    color: #ff1493;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe4e1;
+    color: #ff69b4;
+    font-size: 1em;
+}

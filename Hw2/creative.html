@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poemas Mias</title>
+    <link id="theme" rel="stylesheet" href="dark_poem_style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">poetry is art.</h1>
+    <div class="header">
+
+    <button onclick="window.location.href='home.html'">Back to Home</button>
+    <button onclick="changeTheme('dark')">Dark Queen Theme</button>
+    <button onclick="changeTheme('pink')">Pretty Princess Theme</button>
+</div>
+    <div class="poem-container"> 
+        <p class="poem-author">Poems by Michelle and friends</p>
+        <pre>
+if it doesn't come bursting out of you
+in spite of everything,
+don't do it.
+            - Charles Bukowski
+        </pre>
+        
+        <div class="stanza">
+            <h3>Featured Poems</h3>
+            <ul>
+                <li><a href="Poems/muerte.html">Muerte - Mia</a></li>
+                <li><a href="Poems/subtle.html">Subtly - Mia</a></li>
+                <li><a href="Poems/embrujada.html">Embrujada - Davis</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Michelle Lawson.</p>
+        <p> This webpage uses both external stylesheets and inline styling.</p>
+        
+    </footer>
+
+    <script>
+        function changeTheme(mode) {
+            let theme = document.getElementById('theme');
+            if (mode === 'dark') {
+                theme.href = 'dark_poem_style.css';
+            } else if (mode === 'pink') {
+                theme.href = 'pink_poem_style.css';
+            }
+        }
+    </script>
+</body>
+</html>

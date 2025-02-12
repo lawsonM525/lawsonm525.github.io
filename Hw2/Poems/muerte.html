@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Muerte</title>
+    <link id="theme" rel="stylesheet" href="../dark_poem_style.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href='../creative.html'">All Poems</button>
+        <button onclick="changeTheme('dark')">Dark Queen Theme</button>
+        <button onclick="changeTheme('pink')">Pretty Princess Theme</button>
+    </div>
+    <div class="poem-container">
+        <h1>Muerte</h1>
+        <pre>
+Silence flitters throughout the room
+
+Swirling over the ceiling like a gliding bird
+
+Its deafening, penetrating, jarring
+
+So loud that it ceases to be silent
+
+</pre>
+
+<p>
+    - Mia
+</p>
+
+</body>
+
+<script>
+    function changeTheme(mode) {
+        let theme = document.getElementById('theme');
+        if (mode === 'dark') {
+            theme.href = '../dark_poem_style.css';
+        } else if (mode === 'pink') {
+            theme.href = '../pink_poem_style.css';
+        }
+    }
+</script>
+</html>

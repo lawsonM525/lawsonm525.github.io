@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8"> <!-- Important for tildes and accents-->
+<head>
+
+    <title>Muerte</title>
+
+    <link id="theme" rel="stylesheet" href="../dark_poem_style.css">
+
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href='../creative.html'">All Poems</button>
+        <button onclick="changeTheme('dark')">Dark Queen Theme</button>
+        <button onclick="changeTheme('pink')">Pretty Princess Theme</button>
+    </div>
+    <div class="poem-container">
+        <h1>embrujada</h1>
+        <p class="poem-author">Davis</p>
+        <pre>
+            Dejó caer la pluma
+            me hizo fruncir el ceño
+            
+            Hasta que...
+            
+            un amigo de dios
+            se convirtió en mi muy buen amigo
+            
+            Pienso en ella más de lo que sabe
+            Ella aún no lo sabe, pero probablemente tenga mi corazón y mis votos.
+            
+            Espero no estropearlo
+            el amor que es
+            
+            Ella es mi casa embrujada, mi estado de ánimo y mi flujo.
+            No lo querría de otra manera
+            
+            Ella piensa que merezco flores
+            Ella se merece el mundo
+            
+            Y me contentaría solo con ella
+            Así que querido Dios,
+            ¿Eres un sólido?
+            ¿Puedes dejar que tu amigo sea mi amante?
+</pre>
+ 
+
+</body>
+
+<script>
+    function changeTheme(mode) {
+        let theme = document.getElementById('theme');
+        if (mode === 'dark') {
+            theme.href = '../dark_poem_style.css';
+        } else if (mode === 'pink') {
+            theme.href = '../pink_poem_style.css';
+        }
+    }
+</script>
+</html>

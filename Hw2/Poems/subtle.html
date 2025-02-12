@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Muerte</title>
+    <link id="theme" rel="stylesheet" href="../dark_poem_style.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href='../creative.html'">All Poems</button>
+        <button onclick="changeTheme('dark')">Dark Queen Theme</button>
+        <button onclick="changeTheme('pink')">Pretty Princess Theme</button>
+    </div>
+    <div class="poem-container">
+        <h1>Subtly</h1>
+        <pre>
+            Smiles on faces, pain in braces
+
+            Separate beings going places
+            
+            Random impulse, steady paces
+            
+            Start of a forever full of phases
+   
+            
+            Smiles and hope, thoughts elope
+            
+            Texts per minute, the texts explode
+            
+            All experience must run through Cole
+            
+            Filtered reaching, lightened soul
+   
+            
+            Smiles forever, even on darker paths
+            
+            Silence is not always harsh
+            
+            Sometimes soft, removes pain from the past
+            
+            Simple like this it will last
+            
+       
+            Saved me, Tamed me, Raised me
+            
+            Not all loves are called baby.
+
+</pre>
+
+<p>
+    - Mia
+</p>
+
+</body>
+
+<script>
+    function changeTheme(mode) {
+        let theme = document.getElementById('theme');
+        if (mode === 'dark') {
+            theme.href = '../dark_poem_style.css';
+        } else if (mode === 'pink') {
+            theme.href = '../pink_poem_style.css';
+        }
+    }
+</script>
+</html>

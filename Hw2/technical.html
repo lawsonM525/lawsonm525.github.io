@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hw2 - Technical</title>
+    <link id="theme" rel="stylesheet" href="light_tech_style.css">
+</head>
+<body>
+    <div class="header">
+        <img id="logo"  src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Smithcollege-logo.png" alt="Smith College Logo">
+    </div>
+    <div class="sidebar">
+        <hr>
+        <div class="course-header">
+            <div>CSC252</div>
+            <div>Fall 2020</div>
+            <div><a href="#">Ileana Streinu</a></div>
+        </div>
+        <hr>
+        <a href="#">Home</a>
+        <a href="#">Schedule</a>
+        <a href="#">Syllabus</a>
+        <a href="#">Requirements</a>
+        <a href="#">Textbook</a>
+        <hr>
+        <a href="#">HowTo</a>
+        <a href="#">Resources</a>
+        <hr>
+    </div>
+    <div class="content">
+        <div class="course-info">
+            <h1>252 Algorithms</h1>
+        
+
+        <div class="schedule">
+            <h2>Schedule</h2>
+            <button onclick="window.location.href='home.html'">Back to Home</button>
+
+            <button class="read-me" onclick="changeMode('light')">Light Mode</button>
+            <button class="read-me" onclick="changeMode('dark')">Dark Mode</button>
+
+            <table>
+                <tr>
+                    <th>Week</th>
+                    <th>Date</th>
+                    <th>Lecture</th>
+                    <th>Topic</th>
+                    <th>Hwk</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Tu 9/1<br>Th 9/3</td>
+                    <td><a href="#">Lectures<br>1+2</a></td>
+                    <td>Introduction.<br>Case study: some basic linear time algorithms.<br>Iterative vs. Recursive algorithms.<br>Time and space complexity.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tu 9/8<br>Th 9/10</td>
+                    <td><a href="#">Lecture 3</a><br><a href="#">Lecture 4</a></td>
+                    <td>Algorithm analysis:<br>Asymptotic analysis: Big Oh and orders of growth.<br>Worst case, best case, average case analysis.</td>
+                    <td><a href="#">Ex 1</a><br><a href="#">Hw 1</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+    <script>
+        function changeMode(mode) {
+            let theme = document.getElementById('theme');
+            let logo = document.getElementById('logo');
+            if (mode === 'light') {
+                theme.href = 'light_tech_style.css';
+                logo.width = '200';
+                logo.height = '200';
+                logo.src = 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Smithcollege-logo.png';
+
+            } else if (mode === 'dark') {
+                theme.href = 'dark_tech_style.css';
+                logo.width = '100';
+                logo.height = '100';
+                logo.src = 'https://www.science.smith.edu/posters/wp-content/uploads/sites/10/2022/03/gates_logo.png';
+            }
+        }
+        
+    </script>
+</body>
+</html>
