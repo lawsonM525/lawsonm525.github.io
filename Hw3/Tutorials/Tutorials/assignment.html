@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 7 - Assignment</title>
+</head>
+<body>
+    <h1>Tutorial 7 - Assignment</h1>
+    <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+    <p id="output">Initial value of x: 10</p>
+    <button onclick="add()">Add 5</button>
+    <button onclick="subtract()">Subtract 3</button>
+    <button onclick="multiply()">Multiply by 2</button>
+    <button onclick="divide()">Divide by 4</button>
+    <button onclick="remainder()">Remainder by 3</button>
+    <button onclick="exponentiate()">Exponentiate by 2</button>
+
+    <script>
+        let x = 10;
+
+        function updateOutput(message) {
+            document.getElementById('output').innerHTML = message;
+        }
+
+        function add() {
+            x += 5;
+            updateOutput(`After x += 5: ${x}`);
+        }
+
+        function subtract() {
+            x -= 3;
+            updateOutput(`After x -= 3: ${x}`);
+        }
+
+        function multiply() {
+            x *= 2;
+            updateOutput(`After x *= 2: ${x}`);
+        }
+
+        function divide() {
+            x /= 4;
+            updateOutput(`After x /= 4: ${x}`);
+        }
+
+        function remainder() {
+            x %= 3;
+            updateOutput(`After x %= 3: ${x}`);
+        }
+
+        function exponentiate() {
+            x **= 2;
+            updateOutput(`After x **= 2: ${x}`);
+        }
+    </script>
+</body>
+</html>

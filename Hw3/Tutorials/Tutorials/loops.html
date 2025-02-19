@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial 10 - Loops</title>
+</head>
+
+<body>
+    <h1>Tutorial 10 - Loops</h1>
+    <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+
+   
+    <h2>Car List</h2>
+    <div id="carList"></div>
+
+    <p> The list was populated using a for loop.</p>
+
+    <script>
+        const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        let text = "";
+        for (let i = 0; i < cars.length; i++) {
+            text += cars[i] + "<br>";
+        }
+        document.getElementById("carList").innerHTML = text;
+    </script>
+</body>
+
+</html>

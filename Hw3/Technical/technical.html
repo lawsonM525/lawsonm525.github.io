@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hw2 - Technical</title>
+    <link id="theme" rel="stylesheet" href="light_tech_style.css">
+</head>
+<body>
+    <div class="header">
+        <img id="logo"  src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Smithcollege-logo.png" alt="Smith College Logo">
+    </div>
+    <div class="sidebar">
+        <hr>
+        <div class="course-header">
+            <div>CSC252</div>
+            <div>Fall 2020</div>
+            <div><a href="https://www.science.smith.edu/~istreinu/">Ileana Streinu</a></div>
+        </div>
+        <hr>
+        <a href="../home.html">Home</a>
+        <a href="../../Hw1/home.html">Schedule</a>
+        <a href="../../Technical/syllabus.txt" download="syllabus.txt">Syllabus</a>
+        <a href="../../Technical/syllabus.txt" download="syllabus.txt">Requirements</a>
+        <a href="https://www.w3schools.com/html/default.asp">Textbook</a>
+        <hr>
+        <a href="https://www.w3schools.com/html/default.asp">HowTo</a>
+        <a href="https://www.w3schools.com/html/default.asp">Resources</a>
+        <hr>
+    </div>
+    <div class="content">
+        <div class="course-info">
+            <h1>252 Algorithms</h1>
+        
+
+        <div class="schedule">
+            <h2>Schedule</h2>
+            <button onclick="window.location.href='../home.html'">Back to Home</button>
+
+            <button class="read-me" onclick="changeMode('light')">Light Mode</button>
+            <button class="read-me" onclick="changeMode('dark')">Dark Mode</button>
+
+            <button id="infoButton" onclick="toggleInfo()">More Info</button>
+            <p id="infoText" style="display: none;">This schedule outlines the weekly topics and assignments for the course. Each week includes lectures and homework assignments to help you understand the material.</p>
+
+            <table>
+                <tr>
+                    <th>Week</th>
+                    <th>Date</th>
+                    <th>Lecture</th>
+                    <th>Topic</th>
+                    <th>Hwk</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Tu 9/1<br>Th 9/3</td>
+                    <td><a href="#">Lectures<br>1+2</a></td>
+                    <td>Introduction.<br>Case study: some basic linear time algorithms.<br>Iterative vs. Recursive algorithms.<br>Time and space complexity.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tu 9/8<br>Th 9/10</td>
+                    <td><a href="#">Lecture 3</a><br><a href="#">Lecture 4</a></td>
+                    <td>Algorithm analysis:<br>Asymptotic analysis: Big Oh and orders of growth.<br>Worst case, best case, average case analysis.</td>
+                    <td><a href="#">Ex 1</a><br><a href="#">Hw 1</a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+             <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="img1.jpg" style="height: 150px">
+                <div class="text">Introduction to Algorithms</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="img2.jpg" style="height: 150px">
+                <div class="text">Algorithm Analysis</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="img3.jpg" style="height: 150px">
+                <div class="text">Advanced Topics</div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+         
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <p> <i> <b>Note:</b> These images are copyright free image from pexels.com . </i> </p>
+    </div>
+
+    </div>
+    <script>
+        function changeMode(mode) {
+            let theme = document.getElementById('theme');
+            let logo = document.getElementById('logo');
+            if (mode === 'light') {
+                theme.href = 'light_tech_style.css';
+                logo.width = '200';
+                logo.height = '200';
+                logo.src = 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Smithcollege-logo.png';
+
+            } else if (mode === 'dark') {
+                theme.href = 'dark_tech_style.css';
+                logo.width = '100';
+                logo.height = '100';
+                logo.src = 'https://www.science.smith.edu/posters/wp-content/uploads/sites/10/2022/03/gates_logo.png';
+            }
+        }
+        
+        function toggleInfo() {
+            const infoText = document.getElementById('infoText');
+            const infoButton = document.getElementById('infoButton');
+            if (infoText.style.display === 'none') {
+                infoText.style.display = 'block';
+                infoButton.textContent = 'Hide Info';
+            } else {
+                infoText.style.display = 'none';
+                infoButton.textContent = 'More Info';
+            }
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+ 
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

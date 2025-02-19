@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial 6 - Arithmetic</title>
+</head>
+
+<body>  
+    <h1>Tutorial 6 - Arithmetic</h1>
+    <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+
+     <button onclick="showSum()">Show Sum</button>
+    <button onclick="showDifference()">Show Difference</button>
+    <button onclick="showProduct()">Show Product</button>
+    <button onclick="showQuotient()">Show Quotient</button>
+    <button onclick="showRemainder()">Show Remainder</button>
+    <button onclick="showPower()">Show Power</button>
+    <button onclick="incrementA()">Increment A</button>
+    <button onclick="decrementB()">Decrement B</button>
+
+    <script>
+        // basic  operations
+        let a = 10;
+        let b = 5;
+
+        function showSum() {
+            let sum = a + b;
+            alert("Sum: " + sum);
+        }
+
+        function showDifference() {
+            let difference = a - b;
+            alert("Difference: " + difference);
+        }
+
+        function showProduct() {
+            let product = a * b;
+            alert("Product: " + product);
+        }
+
+        function showQuotient() {
+            let quotient = a / b;
+            alert("Quotient: " + quotient);
+        }
+
+        function showRemainder() {
+            let remainder = a % b;
+            alert("Remainder: " + remainder);
+        }
+
+        function showPower() {
+            let power = a ** b;
+            alert("Power: " + power);
+        }
+
+        function incrementA() {
+            a++;
+            alert("Incremented a: " + a);
+        }
+
+        function decrementB() {
+            b--;
+            alert("Decremented b: " + b);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial 4 - Statements</title>
+</head>
+<body>
+    <h1>Tutorial 4 - JavaScript Statements</h1>
+    <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        // Declare variables
+        let x, y, z;
+        
+        // Assign values
+        x = 5;
+        y = 6;
+        
+        // Calculate sum
+        z = x + y;
+        
+        // Display results
+        document.getElementById("demo1").innerHTML = "The value of z is: " + z;
+
+        // Function to update content
+        function updateContent() {
+            document.getElementById("demo2").innerHTML = "Hello Dolly!";
+        }
+
+        // Call the function
+        updateContent();
+    </script>
+
+    <p>This example used variable declarations, assignments, and a JS function to update the HTML content.</p>
+</body>
+</html>

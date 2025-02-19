@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Variables Example</title>
+</head>
+
+
+<body>
+    <h1>JavaScript Variables Example</h1>
+    <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+
+    <script>
+        // Automatically declared variables
+        a = 5;
+        b = 6;
+        c = a + b;
+        document.getElementById("result1").innerHTML = "Automatically declared: a = " + a + ", b = " + b + ", c = " + c;
+
+        // Using var
+        var x = 5;
+        var y = 6;
+        var z = x + y;
+        document.getElementById("result2").innerHTML = "Using var: x = " + x + ", y = " + y + ", z = " + z;
+
+        // Using let and const
+        const price1 = 5;
+        const price2 = 6;
+        let total = price1 + price2;
+        document.getElementById("result3").innerHTML = "Using let and const: price1 = " + price1 + ", price2 = " + price2 + ", total = " + total;
+    </script>
+</body>
+</html>
