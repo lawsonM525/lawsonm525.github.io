@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutorial 10 - Style Guide</title>
+    </head>
+
+    <body>
+        <h1>Tutorial 10 - Style Guide</h1>
+        <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+ 
+        <button onclick="calculateFullPrice()">Calculate Full Price</button>
+        <p id="result"></p>
+
+        <script>
+            // Function to calculate full price including tax
+            function calculateFullPrice() {
+                const price = 19.90;
+                const tax = 0.20;
+                const fullPrice = price + (price * tax);
+
+                // Display the result
+                document.getElementById("result").innerHTML = "Full Price: $" + fullPrice.toFixed(2);
+            }
+        </script>
+    </body>
+    
+</html>

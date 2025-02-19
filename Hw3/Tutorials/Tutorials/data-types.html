@@ -9,9 +9,59 @@
 <body>
     <h1>Tutorial 8 - Data Types</h1>
     <button onclick="window.location.href='../tutorial.html'">Back to Tutorials</button>
+    <button onclick="showDataTypes()">Show Data Types</button>
+    <pre id="output"></pre>
 
-    <p id="output"></p>
-    <button onclick="showString()">Show String</button>
-    <button onclick="showNumber()">Show Number</button>
-    <button onclick="showBoolean()">Show Boolean</button>
+    <script>
+        function showDataTypes() {
+            // Numbers
+            let length = 16;
+            let weight = 7.5;
+
+            // Strings
+            let color = "Yellow";
+            let lastName = "Johnson";
+
+            // Booleans
+            let x = true;
+            let y = false;
+
+            // Object
+            const person = {firstName: "John", lastName: "Doe"};
+
+            // Array object
+            const cars = ["Saab", "Volvo", "BMW"];
+
+            // Date object
+            const date = new Date("2022-03-25");
+
+            // BigInt
+            let bigInt = BigInt("123456789012345678901234567890");
+
+            // Undefined
+            let car;
+
+            // Null
+            let emptyValue = null;
+
+            // Symbol
+            let sym = Symbol("unique");
+
+            // Displaying the data types
+            let output = `
+                Numbers: ${length}, ${weight}
+                Strings: ${color}, ${lastName}
+                Booleans: ${x}, ${y}
+                Object: ${JSON.stringify(person)}
+                Array: ${cars}
+                Date: ${date}
+                BigInt: ${bigInt}
+                Undefined: ${car}
+                Null: ${emptyValue}
+                Symbol: ${sym.toString()}
+            `;
+
+            document.getElementById("output").textContent = output;
+        }
+    </script>
 </body>
