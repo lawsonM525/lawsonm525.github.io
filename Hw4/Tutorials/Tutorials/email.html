@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Tutorial</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>Email Tutorial!</h1>
+    <p>Type an email and let's check if it's real!!</p>
+
+    <input type="email" id="emailInput" placeholder="Type your email here!">
+    <button onclick="validateEmail()">Check it!</button>
+    <p id="output"></p>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("emailInput");
+            var output = document.getElementById("output");
+            if (email.validity.valid) {
+                output.innerHTML = "Yippee! That's a real email! 📧";
+                output.style.color = "lightgreen";
+            } else {
+                output.innerHTML = "Uh-oh! That doesn't look like an email... 🤔";
+                output.style.color = "pink";
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Tutorial</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>Date Tutorial!</h1>
+    <p>Pick a date in 2024 and see what happens!!</p>
+
+    <input type="date" id="datePicker">
+    <p id="output"></p>
+
+    <script>
+        var datePicker = document.getElementById("datePicker");
+        datePicker.min = "2024-01-01";
+        datePicker.max = "2024-12-31";
+        datePicker.onchange = function() {
+            document.getElementById("output").innerHTML = 
+                "The input says you picked " + this.value + ". The input is always right 🙂‍↕️";
+        }
+    </script>
+</body>
+</html> 

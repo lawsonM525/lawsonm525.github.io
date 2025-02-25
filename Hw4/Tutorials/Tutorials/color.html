@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Color Tutorial</title>
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>Color Tutorial!</h1>
+    <p>Pick a color, any color! hehehr</p>
+
+    <input type="color" id="colorPicker" value="#ff0000">
+    <div id="colorBox" style="width: 100px; height: 100px; margin: 10px; border: 2px solid white;"></div>
+    <p id="output"></p>
+
+    <script>
+        var colorPicker = document.getElementById("colorPicker");
+        var colorBox = document.getElementById("colorBox");
+        colorBox.style.backgroundColor = colorPicker.value;
+        colorPicker.onchange = function() {
+            colorBox.style.backgroundColor = this.value;
+            document.getElementById("output").innerHTML = 
+                "Ooh, pretty! You picked " + this.value + "✨";
+        }
+    </script>
+</body>
+</html> 

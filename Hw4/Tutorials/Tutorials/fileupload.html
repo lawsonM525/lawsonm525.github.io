@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Tutorial</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>File Upload Tutorial!</h1>
+    <p>Pick an image and we'll use the JS to tell you all about it!!</p>
+
+    <input type="file" id="fileInput" accept="image/*">
+    <p id="output"></p>
+
+    <script>
+        var fileInput = document.getElementById("fileInput");
+        fileInput.onchange = function() {
+            var file = this.files[0];
+            document.getElementById("output").innerHTML = 
+                "Cool pic! 📸<br>" +
+                "Name: " + file.name + "<br>" +
+                "Size: " + Math.round(file.size/1024) + " KB<br>" +
+                "Type: " + file.type + " 🎨";
+        }
+    </script>
+</body>
+</html> 

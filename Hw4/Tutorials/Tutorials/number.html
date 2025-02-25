@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Tutorial</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>Number Tutorial!</h1>
+    <p>Pick a number between 0 and 100 (it jumps by 5)!!</p>
+
+    <input type="number" id="numberInput" min="0" max="100" step="5" value="50">
+    <p id="output"></p>
+
+    <script>
+        var numberInput = document.getElementById("numberInput");
+        numberInput.onchange = function() {
+            var message = "";
+            if(this.value < 30) message = "Feeling low today? 😕📉";
+            else if(this.value > 70) message = "Aiming high! 📈";
+            else message = "Right in the middle! ⭐";
+            
+            document.getElementById("output").innerHTML = message;
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Tutorial</title>
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>Button Tutorial!</h1>
+    <p>We can take in info with buttons using JS!!</p>
+
+    <button id="demoButton">Click Me!</button>
+    <p id="output"></p>
+
+    <script>
+        var btn = document.getElementById("demoButton");
+        btn.onclick = function() {
+            this.disabled = true;
+            this.innerHTML = "Button Clicked!";
+            this.style.backgroundColor = "gray";
+            document.getElementById("output").innerHTML = "Oopsie! The button is now disabled! (because we know you clicked it)";
+        }
+    </script>
+</body>
+</html> 

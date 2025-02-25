@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Tutorial</title>
+    <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
+</head>
+<body>
+    <a href="../tutorials.html">Back to Tutorials</a>
+
+    <h1>Checkbox Tutorial!</h1>
+    <p>Let's see what happens when we check this box!!</p>
+
+    <input type="checkbox" id="demoCheckbox"> Check me pretty please!
+    <p id="output"></p>
+
+    <script>
+        var checkbox = document.getElementById("demoCheckbox");
+        checkbox.onchange = function() {
+            document.getElementById("output").innerHTML = 
+                this.checked ? "Yay! You checked the box! *happy dance*" : "Aww, you unchecked it... :(";
+        }
+    </script>
+</body>
+</html> 
