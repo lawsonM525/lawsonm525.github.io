@@ -1,0 +1,127 @@
+body {
+    background: #000000;
+    color: #fff;
+    font-family: 'Times New Roman', serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-container {
+    background: #111;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    border: 1px solid #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #d00571;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background: #000;
+    color: white;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+}
+
+.question {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 15px;
+    background: #111;
+    border: 1px solid #fff;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+label:hover {
+    background: #222;
+    border: 1px solid #d00571;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #000;
+    color: white;
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #d00571;
+    border-color: #d00571;
+}
+
+#resultsSection {
+    text-align: center;
+}
+
+.section {
+    transition: opacity 0.5s;
+}
+
+#resultText {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    background: #111;
+    font-size: 18px;
+    line-height: 1.6;
+    border: 1px solid #fff;
+}
+
+.language-icon {
+    font-size: 3em;
+    margin: 20px 0;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #d00571;
+}
+
+/* Add some emphasis to strong tags */
+strong {
+    color: #d00571;
+}
+
+/* Style for h3 tags in results */
+#resultText h3 {
+    color: #d00571;
+    margin-bottom: 20px;
+}

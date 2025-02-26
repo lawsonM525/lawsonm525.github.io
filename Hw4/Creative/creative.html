@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Language Match</title>
+    <link rel="stylesheet" type="text/css" href="CSS/creative.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🖥️ What Programming Language Are You? </h1>
+        
+        <!-- starter section -->
+        <div id="introSection" class="section">
+            <p>Answer these questions and we'll tell you hehe</p>
+            <input type="text" id="nameInput" placeholder="Your name..." required>
+            <input type="date" id="birthdateInput" required>
+            <button onclick="startQuiz()">Find out... ✨</button>
+        </div>
+
+        <!-- quiz questions -->
+        <div id="quizSection" class="section" style="display: none;">
+            <div class="question" id="q1">
+                <p>1. How do you solve problems? 🤔</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="structured"> Step by step, very organized</label>
+                    <label><input type="radio" name="q1" value="creative"> Creatively, very outside the box</label>
+                    <label><input type="radio" name="q1" value="analytical"> By analyzing patterns and data</label>
+                    <label><input type="radio" name="q1" value="visual"> Visually, with lots ofdiagrams and sketches</label>
+                </div>
+            </div>
+
+            <div class="question" id="q2">
+                <p>2. What's your ideal project? </p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="web"> Building lovely websites</label>
+                    <label><input type="radio" name="q2" value="data"> Analyzing big data sets</label>
+                    <label><input type="radio" name="q2" value="mobile"> Creating mobile apps</label>
+                    <label><input type="radio" name="q2" value="game"> Making video games</label>
+                </div>
+            </div>
+
+            <div class="question" id="q3">
+                <p>3. How do you like to work? 👥</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="team"> In a big team with lots of collaboration</label>
+                    <label><input type="radio" name="q3" value="solo"> Independently on my own projects</label>
+                    <label><input type="radio" name="q3" value="pair"> Pair programming with a partner</label>
+                    <label><input type="radio" name="q3" value="community"> Contributing to open source stuff</label>
+                </div>
+            </div>
+
+            <div class="question" id="q4">
+                <p>4. What's your coding style? </p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="simple"> Clean and simple code</label>
+                    <label><input type="radio" name="q4" value="complex"> Complex algorithms that are really optimized</label>
+                    <label><input type="radio" name="q4" value="flexible"> Quick and flexible solutions</label>
+                    <label><input type="radio" name="q4" value="structured"> Well-structured and documented</label>
+                </div>
+            </div>
+
+            <div class="question" id="q5">
+                <p>5. What interests you most? 🌟</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="ai"> Artificial Intelligence and Machine Learning</label>
+                    <label><input type="radio" name="q5" value="ui"> User Interface and Experience</label>
+                    <label><input type="radio" name="q5" value="backend"> Backend Systems and Databases</label>
+                    <label><input type="radio" name="q5" value="mobile"> Mobile Development</label>
+                </div>
+            </div>
+
+            <button onclick="showResults()">Find out Your Language! 🎉</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="section" style="display: none;">
+            <h2>🎯 Your Programming Match! 🎯</h2>
+            <div id="resultText"></div>
+            <button onclick="resetQuiz()">Try Again! 🔄</button>
+        </div>
+    </div>
+
+    <script src="JS/creative.js"></script>
+</body>
+</html>
