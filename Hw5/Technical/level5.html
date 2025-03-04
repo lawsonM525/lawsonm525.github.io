@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 5 - Moving Points</title>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+                padding: 20px;
+            }
+            button {
+                background-color: #333;
+                color: white;
+                border: 1px solid #444;
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                background-color: #d00571;
+                border-color: white;
+            }
+        </style>
+    </head>
+<body>
+    <div>
+        <button onclick="window.location.href='technical.html'">Back to Home</button>
+        <button onclick="window.location.href='level6.html'">Level 6</button>
+        <h1>Level 5 - Moving Points</h1>
+    </div>
+    <button onclick="reset()">Reset</button>
+    <div>
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid grey"></canvas>  
+    </div>
+    <script src="JS/canvas.js"></script>
+    <script>
+        var NRPTS = 4;
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        createMovingPoints(NRPTS, c, ctx);
+
+        function reset() {
+            ctx.clearRect(0, 0, c.width, c.height);
+            createMovingPoints(NRPTS, c, ctx);
+        }
+    </script>
+</body>
+</html> 

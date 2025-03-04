@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body>
+    <button onclick="window.location.href='home.html'">Back to Home </button>
+<button onclick="window.location.href='level2.html'">Level 2</button>
+
+<div>
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid grey"></canvas>  
+</div>
+<script src="JS/canvas.js"></script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    createPointCenter(c, ctx);
+</script>
+</body>
+</html>

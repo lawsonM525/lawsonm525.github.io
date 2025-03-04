@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 2 - Fixed Points</title>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+                padding: 20px;
+            }
+            button {
+                background-color: #333;
+                color: white;
+                border: 1px solid #444;
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                background-color: #d00571;
+                border-color: white;
+            }
+        </style>
+    </head>
+<body>
+    <button onclick="window.location.href='technical.html'">Back to Home</button>
+    <button onclick="window.location.href='level3.html'">Level 3</button>
+    <h1>Level 2 - Fixed Points</h1>
+    <div>
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid grey"></canvas>  
+    </div>
+    <script src="JS/canvas.js"></script>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        createFixedPoint(c, ctx, 100, 100, "red");
+        createFixedPoint(c, ctx, 300, 300, "blue");
+        createFixedPoint(c, ctx, 200, 100, "green");
+    </script>
+</body>
+</html> 

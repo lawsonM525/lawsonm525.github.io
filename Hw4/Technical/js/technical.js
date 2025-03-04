@@ -16,7 +16,7 @@ function initializeSquares() {
     
     // Create squares from config
     squaresConfig.forEach(config => {
-        const square = document.createElement('div');
+        const square = document.createElement('div'); //creating square as a div
         square.className = 'square';
         square.style.backgroundColor = config.color;
         square.style.left = config.startX + 'px';

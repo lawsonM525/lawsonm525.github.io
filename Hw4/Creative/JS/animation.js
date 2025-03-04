@@ -1,9 +1,9 @@
 // defining/configurating squares
 const squaresConfig = [
-    { color: '#d00571', startX: 0, startY: 0 },
-    { color: '#ff69b4', startX: window.innerWidth - 50, startY: window.innerHeight - 50 },
-    { color: '#ff1493', startX: 0, startY: window.innerHeight - 50 },
-    { color: '#ff69b4', startX: window.innerWidth - 50, startY: 0 }
+    { color: '#ffffff', startX: 0, startY: 0 },
+    { color: '#ffffff', startX: window.innerWidth - 50, startY: window.innerHeight - 50 },
+    { color: '#ffffff', startX: 0, startY: window.innerHeight - 50 },
+    { color: '#ffffff', startX: window.innerWidth - 50, startY: 0 }
 ];
 
 function initializeSquares() {

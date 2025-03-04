@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 7 - Adjustable Points</title>
+        <style>
+            body {
+                background-color: black;
+                color: white;
+                padding: 20px;
+            }
+            button {
+                background-color: #333;
+                color: white;
+                border: 1px solid #444;
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                background-color: #d00571;
+                border-color: white;
+            }
+            input[type="number"] {
+                background-color: #333;
+                color: white;
+                border: 1px solid #444;
+                padding: 5px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+<body>
+    <div>
+        <button onclick="window.location.href='technical.html'">Back to Home</button>
+        <button onclick="window.location.href='level8.html'">Level 8</button>
+        <h1>Level 7 - Adjustable Points</h1>
+    </div>
+    Number of points: <input type="number" min="1" max="100" value="5" id="dropdown">
+    <div>
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid grey"></canvas>  
+    </div>
+    <script src="JS/canvas.js"></script>
+    <script>
+        var NRPTS = document.getElementById("dropdown").value;
+        document.getElementById("dropdown").oninput = function() {
+            NRPTS = this.value;
+            createMovingPoints(NRPTS, c, ctx);
+        }
+
+        var c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        createMovingPoints(NRPTS, c, ctx);
+    </script>
+</body>
+</html> 

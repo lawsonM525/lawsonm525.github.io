@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Level 9 - Points with Trace</title>
+        <link rel="stylesheet" href="CSS/technicals.css">
+    </head>
+<body>
+    <div>
+        <button onclick="window.location.href='technical.html'">Back to Home</button>
+        <button onclick="window.location.href='level1.html'">Level 1</button>
+        <h1>Level 9 - Points with Trace</h1>
+    </div>
+    <button onclick="reset()">Reset</button>
+    Number of points: <input type="number" min="1" max="100" value="5" id="dropdown">
+    <label>
+        <input type="checkbox" id="traceCheckbox" onchange="updateTrace()"> Keep Trace
+    </label>
+    <div>
+        <canvas id="myCanvas" width="400" height="400"></canvas>  
+    </div>
+    <script src="JS/canvas.js"></script>
+    <script>
+        var c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        let points = [];
+        let keepTrace = false;
+        let currentAnimation = null; // keep track of current animation
+
+        document.getElementById("dropdown").oninput = reset;
+        
+        // Initialize on load
+        initializePoints();
+    </script>
+</body>
+</html> 

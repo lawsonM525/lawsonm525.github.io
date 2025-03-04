@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body>
+    <div>
+        <button onclick="window.location.href='home.html'">Back to Home </button>
+        <button onclick="window.location.href='level7.html'">Level 7</button>
+    </div>
+ 
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid grey"></canvas>  
+</div>
+<script src="JS/canvas.js"></script>
+<script>
+    //define number of points
+    var NRPTS = 7;
+  
+
+    var c = document.getElementById("myCanvas");
+    const ctx = c.getContext("2d");
+    createMovingPoints(NRPTS, c, ctx);
+
+    function reset() {
+        // remove all points
+        ctx.clearRect(0, 0, c.width, c.height);
+        // create new points
+        createMovingPoints(NRPTS, c, ctx);
+    }
+
+  
+</script>
+</body>
+</html>
