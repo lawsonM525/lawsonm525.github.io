@@ -1,0 +1,150 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    color: #ff69b4;
+    text-align: center;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-btn, .back-btn {
+    background-color: #ff69b4;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.control-btn:hover, .back-btn:hover {
+    background-color: #ff1493;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#gameGrid {
+    border-collapse: collapse;
+}
+
+#gameGrid td {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+#gameGrid td.alive {
+    background-color: #ff69b4;
+}
+
+#gameGrid td:hover {
+    background-color: rgba(255, 105, 180, 0.3);
+}
+
+/* Split button and dropdown styles */
+.button-group {
+    display: flex;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn {
+    background-color: #ff69b4;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#reset {
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    min-width: 80px;
+}
+
+.dropdown-arrow {
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 5px;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(255, 105, 180, 0.2);
+    z-index: 1;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #ff69b4;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff69b4;
+    color: black;
+}
+
+.btn:hover {
+    background-color: #ff1493;
+}
+
+#current-pattern {
+    margin-right: 2px;
+}

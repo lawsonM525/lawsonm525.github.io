@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="CSS/game_of_life.css">
+    <!-- Resource: https://www.freecodecamp.org/news/javascript-2d-arrays/-->
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='../startPage.html'" class="back-btn">Back to Home</button>
+        <h1>Game of Life</h1>
+        
+        <div class="controls">
+            <button id="nextGen" class="control-btn">Next Generation >>></button>
+            <button id="reset" class="control-btn">Reset</button>
+            <select id="pattern-select">
+                <option value="empty">Empty</option>
+                <option value="glider">Glider</option>
+                <option value="replicator">Replicator</option>
+                <option value="random">Random</option>
+            </select>
+            <!--TODO: Add a button to clear the grid-->
+            <!--TODO: Add a button to change the grid size-->
+            <!--TODO: Add dropdown menu to change the starting pattern-->
+            <!-- Starting options: Empty, Preset, Random-->
+            <!-- Dropdown menu for starting options-->
+        </div>
+
+        <div class="grid-container">
+            <!-- Representing the grid as an HTML table-->
+            <table id="gameGrid"></table>
+        </div>
+    </div>
+
+    <!-- Resources: https://www.freecodecamp.org/news/javascript-2d-arrays/ -->
+
+    <script src="JS/cell.js"></script>
+    <script src="JS/grid.js"></script>
+    <script src="JS/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableElement = document.getElementById('gameGrid');
+            const GRID_SIZE = 20;
+            
+            // Initialize game with glider pattern
+            let gameGrid = startGame(tableElement, GRID_SIZE, 'glider');
+    
+            //  event listeners for buttons
+            document.getElementById('nextGen').addEventListener('click', () => {
+                gameGrid.nextGeneration();
+            });
+    
+            document.getElementById('reset').addEventListener('click', () => {
+                const selectedPattern = document.getElementById('pattern-select').value;
+                gameGrid = startGame(tableElement, GRID_SIZE, selectedPattern);
+            });
+    
+            document.getElementById('pattern-select').addEventListener('change', () => {
+                const selectedPattern = document.getElementById('pattern-select').value;
+                document.getElementById('current-pattern').textContent = 
+                    selectedPattern.charAt(0).toUpperCase() + selectedPattern.slice(1);
+                gameGrid = startGame(tableElement, GRID_SIZE, selectedPattern);
+            });
+        });
+    </script>
+    
+</body>
+</html>
+

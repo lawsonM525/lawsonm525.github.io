@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="CSS/hw6.css">
+    <meta charset="utf-8">
+    <!-- Resource: https://www.freecodecamp.org/news/javascript-2d-arrays/-->
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='../startPage.html'" class="back-btn">Back to Home</button>
+        <h1>Game of Life</h1>
+        <p> <i>Technical : 6 hours | Creative : 3 hours</i></p>
+        
+        <div class="controls">
+            <button id="nextGen" class="control-btn">Next Generation >>></button>
+            <div class="button-group">
+                <button id="reset" class="btn">Reset</button>
+                <div class="dropdown">
+                    <button class="btn dropdown-arrow">
+                        <span id="current-pattern">Glider</span> ▼
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" data-pattern="empty">Empty</a>
+                        <a href="#" data-pattern="glider">Glider</a>
+                        <a href="#" data-pattern="replicator">Replicator</a>
+                        <a href="#" data-pattern="random">Random</a>
+                    </div>
+                </div>
+            </div>
+            <!--TODO: Add a button to clear the grid-->
+            <!--TODO: Add a button to change the grid size-->
+            <!--TODO: Add dropdown menu to change the starting pattern-->
+            <!-- Starting options: Empty, Preset, Random-->
+            <!-- Dropdown menu for starting options-->
+        </div>
+
+        <div class="grid-container">
+            <!-- Representing the grid as an HTML table-->
+            <table id="gameGrid"></table>
+        </div>
+    </div>
+
+    <!-- Resources: https://www.freecodecamp.org/news/javascript-2d-arrays/ -->
+
+    <script src="JS/cell.js"></script>
+    <script src="JS/grid.js"></script>
+    <script src="JS/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableElement = document.getElementById('gameGrid');
+            const GRID_SIZE = 20;
+            
+            // Initialize game with glider pattern
+            let gameGrid = startGame(tableElement, GRID_SIZE, 'glider');
+    
+            // Event listeners for buttons
+            document.getElementById('nextGen').addEventListener('click', () => {
+                gameGrid.nextGeneration();
+            });
+    
+            // Add reset button handler
+            document.getElementById('reset').addEventListener('click', () => {
+                const currentPattern = document.getElementById('current-pattern').textContent.toLowerCase();
+                gameGrid = startGame(tableElement, GRID_SIZE, currentPattern);
+            });
+    
+            // Handle dropdown item clicks
+            document.querySelectorAll('.dropdown-content a').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pattern = e.target.getAttribute('data-pattern');
+                    document.getElementById('current-pattern').textContent = 
+                        pattern.charAt(0).toUpperCase() + pattern.slice(1);
+                    gameGrid = startGame(tableElement, GRID_SIZE, pattern);
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    color: #ff69b4;
+    text-align: center;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-btn, .back-btn {
+    background-color: #ff69b4;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.control-btn:hover, .back-btn:hover {
+    background-color: #ff1493;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#gameGrid {
+    border-collapse: collapse;
+}
+
+#gameGrid td {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+#gameGrid td.alive {
+    background-color: #ff69b4;
+}
+
+#gameGrid td:hover {
+    background-color: rgba(255, 105, 180, 0.3);
+}
+
+.split-button {
+    position: relative;
+    display: inline-block;
+}
+
+.split-button select {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.split-button .control-btn {
+    padding-right: 35px;
+    position: relative;
+}
+
+.split-button .control-btn::after {
+    content: "▼";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+}
