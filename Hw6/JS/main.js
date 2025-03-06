@@ -110,6 +110,55 @@ function toggleAnimation(gameGrid, startButton) {
     }
 }
 
+// Add these functions to handle saving the grid as an image
+function createGridImage(gameGrid) {
+    const canvas = document.getElementById('saveCanvas');
+    const ctx = canvas.getContext('2d');
+    const cellSize = 20; // Fixed size for the image
+    const padding = 20; // Padding around the grid
+    
+    // Set canvas size based on grid dimensions
+    canvas.width = gameGrid.cols * cellSize + (padding * 2);
+    canvas.height = gameGrid.rows * cellSize + (padding * 2);
+    
+    // Fill background
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw grid lines
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 1;
+    
+    // Draw cells
+    for (let i = 0; i < gameGrid.rows; i++) {
+        for (let j = 0; j < gameGrid.cols; j++) {
+            const x = j * cellSize + padding;
+            const y = i * cellSize + padding;
+            
+            // Draw cell
+            ctx.strokeRect(x, y, cellSize, cellSize);
+            
+            // Fill living cells
+            if (gameGrid.cells[i][j].isAlive) {
+                ctx.fillStyle = '#ff69b4';
+                ctx.fillRect(x, y, cellSize, cellSize);
+            }
+        }
+    }
+    
+    return canvas.toDataURL('image/png');
+}
+
+function saveGridAsImage(gameGrid) {
+    const dataUrl = createGridImage(gameGrid);
+    
+    // Create temporary link to download the image
+    const link = document.createElement('a');
+    link.download = 'game-of-life-state.png';
+    link.href = dataUrl;
+    link.click();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const tableElement = document.getElementById('gameGrid');
     let GRID_SIZE = 20;
@@ -167,6 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 pattern.charAt(0).toUpperCase() + pattern.slice(1);
             gameGrid = startGame(tableElement, GRID_SIZE, pattern);
         });
+    });
+
+    // Add save button handler
+    document.getElementById('saveBtn').addEventListener('click', () => {
+        saveGridAsImage(gameGrid);
     });
 
     // Update grid size when window is resized
