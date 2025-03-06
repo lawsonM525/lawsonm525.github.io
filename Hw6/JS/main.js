@@ -139,6 +139,7 @@ function toggleAnimation(gameGrid, startButton) {
 // Event Listeners
 // ====================================
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const tableElement = document.getElementById('gameGrid');
     let GRID_SIZE = 20;
@@ -197,7 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
     // Window resize handler
+
     window.addEventListener('resize', () => {
         updateGridStyle();
     });
