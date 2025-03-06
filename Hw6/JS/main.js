@@ -89,9 +89,7 @@ function startGame(tableElement, size, pattern) {
 }
 
 /**
- * Places a pattern in the center of the grid
- * @param {Array<Array<number>>} pattern - 2D array representing the pattern
- * @param {Grid} gameGrid - The game grid to place the pattern in
+ * Places a pattern in the center of the grid 
  */
 function placePattern(pattern, gameGrid) {
     const startRow = Math.floor(gameGrid.rows / 2) - 1;
@@ -114,8 +112,7 @@ let animationId = null;
 const ANIMATION_SPEED = 100; // milliseconds between generations
 
 /**
- * Animates the game by continuously generating next states
- * @param {Grid} gameGrid - The game grid to animate
+ * Animates the game by continuously generating next states 
  */
 function animate(gameGrid) {
     gameGrid.nextGeneration();
