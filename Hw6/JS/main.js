@@ -1,19 +1,25 @@
+// ====================================
+// Grid Size Calculation and Styling
+// ====================================
+
+/**
+ * Calculates the optimal cell size based on window height and grid size
+ */
 function calculateCellSize() {
-    // Get the height of the controls section
     const controls = document.querySelector('.controls');
     const title = document.querySelector('h1');
     const timeInfo = document.querySelector('p');
     
     // Calculate available height (viewport height - controls - title - padding)
-    const availableHeight = window.innerHeight - controls.offsetHeight - title.offsetHeight - timeInfo.offsetHeight - 100; // 100px for padding/margins
-    
-    // Get current grid size
+    const availableHeight = window.innerHeight - controls.offsetHeight - title.offsetHeight - timeInfo.offsetHeight - 100;
     const gridSize = parseInt(document.getElementById('gridSize').value);
     
-    // Calculate cell size (subtract some pixels for borders)
     return Math.floor((availableHeight - gridSize) / gridSize);
 }
 
+/**
+ * Updates the CSS rules for grid cell size
+ */
 function updateGridStyle() {
     const cellSize = calculateCellSize();
     const styleSheet = document.styleSheets[0];
@@ -35,18 +41,24 @@ function updateGridStyle() {
     }
 }
 
+// ====================================
+// Game Initialization and Patterns
+// ====================================
+
+/**
+ * Initializes or resets the game with specified pattern
+ */
 function startGame(tableElement, size, pattern) {
     const gameGrid = new Grid(size, size, tableElement);
     updateGridStyle();
 
-    // defining the glider pattern for preset option.
+    // Pattern definitions
     const gliderPattern = [
         [0, 1, 0],
         [0, 0, 1],
         [1, 1, 1]
     ];
 
-    //defining the replicator pattern 
     const replicatorPattern = [
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 1, 1, 1, 0],
@@ -57,22 +69,28 @@ function startGame(tableElement, size, pattern) {
         [0, 0, 0, 0, 0, 0, 0]
     ];
 
-    // Reset grid first
+    // Reset and apply selected pattern
     gameGrid.reset();
-
-    // placing pattern
-    if (pattern === 'glider') {
-        placePattern(gliderPattern, gameGrid);
-    } else if (pattern === 'replicator') {
-        placePattern(replicatorPattern, gameGrid);
-    } else if (pattern === 'random') {
-        gameGrid.randomize();
+    
+    switch(pattern) {
+        case 'glider':
+            placePattern(gliderPattern, gameGrid);
+            break;
+        case 'replicator':
+            placePattern(replicatorPattern, gameGrid);
+            break;
+        case 'random':
+            gameGrid.randomize();
+            break;
+        // 'empty' pattern requires no additional action
     }
-    // if pattern is 'empty' we just dont do anything since reset() was called
 
     return gameGrid;
 }
 
+/**
+ * Places a pattern in the center of the grid 
+ */
 function placePattern(pattern, gameGrid) {
     const startRow = Math.floor(gameGrid.rows / 2) - 1;
     const startCol = Math.floor(gameGrid.cols / 2) - 1;
@@ -86,23 +104,30 @@ function placePattern(pattern, gameGrid) {
     }
 }
 
-// adding animation feature
+// ====================================
+// Animation Control
+// ====================================
+
 let animationId = null;
 const ANIMATION_SPEED = 100; // milliseconds between generations
 
+/**
+ * Animates the game by continuously generating next states 
+ */
 function animate(gameGrid) {
     gameGrid.nextGeneration();
     animationId = setTimeout(() => animate(gameGrid), ANIMATION_SPEED);
 }
 
+/**
+ * Toggles the animation state between playing and stopped 
+ */
 function toggleAnimation(gameGrid, startButton) {
     if (animationId === null) {
-        // Start animation
         startButton.textContent = 'Stop';
         startButton.style.backgroundColor = '#ff1493';
         animate(gameGrid);
     } else {
-        // Stop animation
         startButton.textContent = 'Play';
         startButton.style.backgroundColor = '#ff69b4';
         clearTimeout(animationId);
@@ -110,77 +135,17 @@ function toggleAnimation(gameGrid, startButton) {
     }
 }
 
-// Add these functions to handle saving the grid as an image
-function createGridImage(gameGrid) {
-    const canvas = document.getElementById('saveCanvas');
-    const ctx = canvas.getContext('2d');
-    const cellSize = 20; // Fixed size for the image
-    const padding = 20; // Padding around the grid
-    
-    // Set canvas size based on grid dimensions
-    canvas.width = gameGrid.cols * cellSize + (padding * 2);
-    canvas.height = gameGrid.rows * cellSize + (padding * 2);
-    
-    // Fill background
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw grid lines
-    ctx.strokeStyle = '#333';
-    ctx.lineWidth = 1;
-    
-    // Draw cells
-    for (let i = 0; i < gameGrid.rows; i++) {
-        for (let j = 0; j < gameGrid.cols; j++) {
-            const x = j * cellSize + padding;
-            const y = i * cellSize + padding;
-            
-            // Draw cell
-            ctx.strokeRect(x, y, cellSize, cellSize);
-            
-            // Fill living cells
-            if (gameGrid.cells[i][j].isAlive) {
-                ctx.fillStyle = '#ff69b4';
-                ctx.fillRect(x, y, cellSize, cellSize);
-            }
-        }
-    }
-    
-    return canvas.toDataURL('image/png');
-}
+// ====================================
+// Event Listeners
+// ====================================
 
-function saveGridAsImage(gameGrid) {
-    try {
-        const dataUrl = createGridImage(gameGrid);
-        
-        // Create temporary link to download the image
-        const link = document.createElement('a');
-        link.download = 'game-of-life-state.png';
-        link.href = dataUrl;
-        
-        // Append link to body (needed for Firefox)
-        document.body.appendChild(link);
-        
-        // Trigger click and remove link
-        link.click();
-        document.body.removeChild(link);
-        
-        // Show success message
-        alert('Image saved successfully!');
-    } catch (error) {
-        console.error('Error saving image:', error);
-        alert('Failed to save image. Please try again.');
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const tableElement = document.getElementById('gameGrid');
     let GRID_SIZE = 20;
-    
-    // Initialize game with glider pattern
     let gameGrid = startGame(tableElement, GRID_SIZE, 'glider');
 
-    // Add size slider handler
+    // Size control handlers
     const sizeSlider = document.getElementById('gridSize');
     const sizeValue = document.getElementById('sizeValue');
     
@@ -198,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameGrid = startGame(tableElement, GRID_SIZE, currentPattern);
     });
 
-    // Event listeners for buttons
+    // Game control buttons
     const startButton = document.getElementById('start');
     startButton.addEventListener('click', () => {
         toggleAnimation(gameGrid, startButton);
@@ -219,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameGrid = startGame(tableElement, GRID_SIZE, currentPattern);
     });
 
+    // Pattern selection handlers
     document.querySelectorAll('.dropdown-content a').forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -232,16 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add save button handler
-    document.getElementById('saveBtn').addEventListener('click', () => {
-        if (animationId !== null) {
-            // Pause animation while saving
-            toggleAnimation(gameGrid, startButton);
-        }
-        saveGridAsImage(gameGrid);
-    });
 
-    // Update grid size when window is resized
+    // Window resize handler
+
     window.addEventListener('resize', () => {
         updateGridStyle();
     });
