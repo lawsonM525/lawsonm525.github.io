@@ -1,19 +1,26 @@
+// ====================================
+// Grid Size Calculation and Styling
+// ====================================
+
+/**
+ * Calculates the optimal cell size based on window height and grid size
+ * @returns {number} The calculated size for each cell in pixels
+ */
 function calculateCellSize() {
-    // Get the height of the controls section
     const controls = document.querySelector('.controls');
     const title = document.querySelector('h1');
     const timeInfo = document.querySelector('p');
     
     // Calculate available height (viewport height - controls - title - padding)
-    const availableHeight = window.innerHeight - controls.offsetHeight - title.offsetHeight - timeInfo.offsetHeight - 100; // 100px for padding/margins
-    
-    // Get current grid size
+    const availableHeight = window.innerHeight - controls.offsetHeight - title.offsetHeight - timeInfo.offsetHeight - 100;
     const gridSize = parseInt(document.getElementById('gridSize').value);
     
-    // Calculate cell size (subtract some pixels for borders)
     return Math.floor((availableHeight - gridSize) / gridSize);
 }
 
+/**
+ * Updates the CSS rules for grid cell size
+ */
 function updateGridStyle() {
     const cellSize = calculateCellSize();
     const styleSheet = document.styleSheets[0];
@@ -35,18 +42,28 @@ function updateGridStyle() {
     }
 }
 
+// ====================================
+// Game Initialization and Patterns
+// ====================================
+
+/**
+ * Initializes or resets the game with specified pattern
+ * @param {HTMLElement} tableElement - The table element to create the grid in
+ * @param {number} size - The size of the grid (size x size)
+ * @param {string} pattern - The pattern to initialize ('empty', 'glider', 'replicator', 'random')
+ * @returns {Grid} The initialized game grid
+ */
 function startGame(tableElement, size, pattern) {
     const gameGrid = new Grid(size, size, tableElement);
     updateGridStyle();
 
-    // defining the glider pattern for preset option.
+    // Pattern definitions
     const gliderPattern = [
         [0, 1, 0],
         [0, 0, 1],
         [1, 1, 1]
     ];
 
-    //defining the replicator pattern 
     const replicatorPattern = [
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 1, 1, 1, 0],
@@ -57,22 +74,30 @@ function startGame(tableElement, size, pattern) {
         [0, 0, 0, 0, 0, 0, 0]
     ];
 
-    // Reset grid first
+    // Reset and apply selected pattern
     gameGrid.reset();
-
-    // placing pattern
-    if (pattern === 'glider') {
-        placePattern(gliderPattern, gameGrid);
-    } else if (pattern === 'replicator') {
-        placePattern(replicatorPattern, gameGrid);
-    } else if (pattern === 'random') {
-        gameGrid.randomize();
+    
+    switch(pattern) {
+        case 'glider':
+            placePattern(gliderPattern, gameGrid);
+            break;
+        case 'replicator':
+            placePattern(replicatorPattern, gameGrid);
+            break;
+        case 'random':
+            gameGrid.randomize();
+            break;
+        // 'empty' pattern requires no additional action
     }
-    // if pattern is 'empty' we just dont do anything since reset() was called
 
     return gameGrid;
 }
 
+/**
+ * Places a pattern in the center of the grid
+ * @param {Array<Array<number>>} pattern - 2D array representing the pattern
+ * @param {Grid} gameGrid - The game grid to place the pattern in
+ */
 function placePattern(pattern, gameGrid) {
     const startRow = Math.floor(gameGrid.rows / 2) - 1;
     const startCol = Math.floor(gameGrid.cols / 2) - 1;
@@ -86,23 +111,33 @@ function placePattern(pattern, gameGrid) {
     }
 }
 
-// adding animation feature
+// ====================================
+// Animation Control
+// ====================================
+
 let animationId = null;
 const ANIMATION_SPEED = 100; // milliseconds between generations
 
+/**
+ * Animates the game by continuously generating next states
+ * @param {Grid} gameGrid - The game grid to animate
+ */
 function animate(gameGrid) {
     gameGrid.nextGeneration();
     animationId = setTimeout(() => animate(gameGrid), ANIMATION_SPEED);
 }
 
+/**
+ * Toggles the animation state between playing and stopped
+ * @param {Grid} gameGrid - The game grid to animate
+ * @param {HTMLElement} startButton - The button that toggles animation
+ */
 function toggleAnimation(gameGrid, startButton) {
     if (animationId === null) {
-        // Start animation
         startButton.textContent = 'Stop';
         startButton.style.backgroundColor = '#ff1493';
         animate(gameGrid);
     } else {
-        // Stop animation
         startButton.textContent = 'Play';
         startButton.style.backgroundColor = '#ff69b4';
         clearTimeout(animationId);
@@ -110,14 +145,16 @@ function toggleAnimation(gameGrid, startButton) {
     }
 }
 
+// ====================================
+// Event Listeners
+// ====================================
+
 document.addEventListener('DOMContentLoaded', () => {
     const tableElement = document.getElementById('gameGrid');
     let GRID_SIZE = 20;
-    
-    // Initialize game with glider pattern
     let gameGrid = startGame(tableElement, GRID_SIZE, 'glider');
 
-    // Add size slider handler
+    // Size control handlers
     const sizeSlider = document.getElementById('gridSize');
     const sizeValue = document.getElementById('sizeValue');
     
@@ -135,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameGrid = startGame(tableElement, GRID_SIZE, currentPattern);
     });
 
-    // Event listeners for buttons
+    // Game control buttons
     const startButton = document.getElementById('start');
     startButton.addEventListener('click', () => {
         toggleAnimation(gameGrid, startButton);
@@ -156,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameGrid = startGame(tableElement, GRID_SIZE, currentPattern);
     });
 
+    // Pattern selection handlers
     document.querySelectorAll('.dropdown-content a').forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
@@ -169,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Update grid size when window is resized
+    // Window resize handler
     window.addEventListener('resize', () => {
         updateGridStyle();
     });
