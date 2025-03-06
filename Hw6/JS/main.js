@@ -74,10 +74,27 @@ function toggleAnimation(gameGrid, startButton) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const tableElement = document.getElementById('gameGrid');
-    const GRID_SIZE = 20;
+    let GRID_SIZE = 20;
     
     // Initialize game with glider pattern
     let gameGrid = startGame(tableElement, GRID_SIZE, 'glider');
+
+    // Add size slider handler
+    const sizeSlider = document.getElementById('gridSize');
+    const sizeValue = document.getElementById('sizeValue');
+    
+    sizeSlider.addEventListener('input', (e) => {
+        sizeValue.textContent = e.target.value;
+    });
+
+    sizeSlider.addEventListener('change', (e) => {
+        if (animationId !== null) {
+            toggleAnimation(gameGrid, startButton);
+        }
+        GRID_SIZE = parseInt(e.target.value);
+        const currentPattern = document.getElementById('current-pattern').textContent.toLowerCase();
+        gameGrid = startGame(tableElement, GRID_SIZE, currentPattern);
+    });
 
     // Event listeners for buttons
     const startButton = document.getElementById('start');
