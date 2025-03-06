@@ -150,13 +150,27 @@ function createGridImage(gameGrid) {
 }
 
 function saveGridAsImage(gameGrid) {
-    const dataUrl = createGridImage(gameGrid);
-    
-    // Create temporary link to download the image
-    const link = document.createElement('a');
-    link.download = 'game-of-life-state.png';
-    link.href = dataUrl;
-    link.click();
+    try {
+        const dataUrl = createGridImage(gameGrid);
+        
+        // Create temporary link to download the image
+        const link = document.createElement('a');
+        link.download = 'game-of-life-state.png';
+        link.href = dataUrl;
+        
+        // Append link to body (needed for Firefox)
+        document.body.appendChild(link);
+        
+        // Trigger click and remove link
+        link.click();
+        document.body.removeChild(link);
+        
+        // Show success message
+        alert('Image saved successfully!');
+    } catch (error) {
+        console.error('Error saving image:', error);
+        alert('Failed to save image. Please try again.');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -220,6 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add save button handler
     document.getElementById('saveBtn').addEventListener('click', () => {
+        if (animationId !== null) {
+            // Pause animation while saving
+            toggleAnimation(gameGrid, startButton);
+        }
         saveGridAsImage(gameGrid);
     });
 
