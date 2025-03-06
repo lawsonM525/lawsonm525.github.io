@@ -5,9 +5,6 @@
 class Grid {
     /**
      * Creates a new game grid
-     * @param {number} rows - Number of rows
-     * @param {number} cols - Number of columns
-     * @param {HTMLElement} tableElement - Table element to render grid
      */
     constructor(rows, cols, tableElement) {
         this.rows = rows;
