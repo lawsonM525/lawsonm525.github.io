@@ -86,7 +86,7 @@ function placePattern(pattern, gameGrid) {
     }
 }
 
-// Add these new variables and functions
+// adding these for animation
 let animationId = null;
 const ANIMATION_SPEED = 100; // milliseconds between generations
 
