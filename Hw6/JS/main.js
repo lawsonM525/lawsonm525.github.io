@@ -120,9 +120,7 @@ function animate(gameGrid) {
 }
 
 /**
- * Toggles the animation state between playing and stopped
- * @param {Grid} gameGrid - The game grid to animate
- * @param {HTMLElement} startButton - The button that toggles animation
+ * Toggles the animation state between playing and stopped 
  */
 function toggleAnimation(gameGrid, startButton) {
     if (animationId === null) {
