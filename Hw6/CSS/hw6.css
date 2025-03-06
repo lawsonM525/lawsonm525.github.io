@@ -54,15 +54,15 @@ p {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    width: 100%;
 }
 
 #gameGrid {
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
 #gameGrid td {
-    width: 25px;
-    height: 25px;
     border: 1px solid #333;
     cursor: pointer;
 }
