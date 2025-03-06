@@ -164,10 +164,6 @@ p {
     .size-control input[type="range"] {
         width: clamp(100px, 15vw, 150px);
     }
-
-    #saveBtn {
-        width: 130px;
-    }
 }
 
 .grid-container {
@@ -277,14 +273,4 @@ p {
 
 #current-pattern {
     margin-right: 2px;
-}
-
-/* Update save button styles */
-.save-control {
-    margin-top: 20px;
-    text-align: center;
-}
-
-#saveBtn {
-    width: 150px;
 }
