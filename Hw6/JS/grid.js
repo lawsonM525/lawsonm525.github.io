@@ -1,4 +1,14 @@
+// ====================================
+// Grid Class Definition
+// ====================================
+
 class Grid {
+    /**
+     * Creates a new game grid
+     * @param {number} rows - Number of rows
+     * @param {number} cols - Number of columns
+     * @param {HTMLElement} tableElement - Table element to render grid
+     */
     constructor(rows, cols, tableElement) {
         this.rows = rows;
         this.cols = cols;
@@ -8,6 +18,13 @@ class Grid {
         this.createHTMLGrid(tableElement);
     }
 
+    // ====================================
+    // Grid Setup Methods
+    // ====================================
+
+    /**
+     * Creates the 2D array of cells
+     */
     initializeGrid() {
         for (let i = 0; i < this.rows; i++) {
             this.grid[i] = [];
@@ -17,9 +34,11 @@ class Grid {
         }
     }
 
+    /**
+     * Creates the HTML table representation of the grid
+     */
     createHTMLGrid(tableElement) {
         tableElement.innerHTML = '';
-
         for (let i = 0; i < this.rows; i++) {
             const row = document.createElement('tr');
             for (let j = 0; j < this.cols; j++) {
@@ -33,11 +52,21 @@ class Grid {
         }
     }
 
+    // ====================================
+    // Game Logic Methods
+    // ====================================
+
+    /**
+     * Toggles cell state and updates display
+     */
     toggleCell(row, col) {
         this.grid[row][col].switchState();
         this.updateDisplay();
     }
 
+    /**
+     * Counts living neighbors for a cell
+     */
     countNeighbors(row, col) {
         let count = 0;
         for (let i = -1; i <= 1; i++) {
@@ -58,12 +87,14 @@ class Grid {
         return count;
     }
 
+    /**
+     * Advances the game by one generation
+     */
     nextGeneration() {
-        // Calculate next state for all cells
+        // Calculate next states
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 const neighborCount = this.countNeighbors(i, j);
-                // Store the next state without updating yet
                 if (this.grid[i][j].alive === 1) {
                     this.grid[i][j].nextState = (neighborCount === 2 || neighborCount === 3) ? 1 : 0;
                 } else {
@@ -72,7 +103,7 @@ class Grid {
             }
         }
 
-        // Update all cells after calculating next states
+        // Update all states simultaneously
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 this.grid[i][j].alive = this.grid[i][j].nextState;
@@ -82,6 +113,13 @@ class Grid {
         this.updateDisplay();
     }
 
+    // ====================================
+    // Display and State Methods
+    // ====================================
+
+    /**
+     * Updates the visual display of the grid
+     */
     updateDisplay() {
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
@@ -95,6 +133,9 @@ class Grid {
         }
     }
 
+    /**
+     * Resets all cells to dead state
+     */
     reset() {
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
@@ -104,11 +145,13 @@ class Grid {
         this.updateDisplay();
     }
 
+    /**
+     * Randomly sets cells to alive/dead
+     */
     randomize() {
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
-                this.grid[i][j].alive = Math.random() < 0.3 ? 1 : 0;
-                // using 30% chance because 50% was too crowded
+                this.grid[i][j].alive = Math.random() < 0.3 ? 1 : 0; // 30% chance of being alive
                 this.grid[i][j].nextState = this.grid[i][j].alive;
             }
         }
