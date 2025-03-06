@@ -1,5 +1,43 @@
+function calculateCellSize() {
+    // Get the height of the controls section
+    const controls = document.querySelector('.controls');
+    const title = document.querySelector('h1');
+    const timeInfo = document.querySelector('p');
+    
+    // Calculate available height (viewport height - controls - title - padding)
+    const availableHeight = window.innerHeight - controls.offsetHeight - title.offsetHeight - timeInfo.offsetHeight - 100; // 100px for padding/margins
+    
+    // Get current grid size
+    const gridSize = parseInt(document.getElementById('gridSize').value);
+    
+    // Calculate cell size (subtract some pixels for borders)
+    return Math.floor((availableHeight - gridSize) / gridSize);
+}
+
+function updateGridStyle() {
+    const cellSize = calculateCellSize();
+    const styleSheet = document.styleSheets[0];
+    
+    // Find and update or add the cell size rules
+    let found = false;
+    for (let i = 0; i < styleSheet.cssRules.length; i++) {
+        const rule = styleSheet.cssRules[i];
+        if (rule.selectorText === '#gameGrid td') {
+            rule.style.width = `${cellSize}px`;
+            rule.style.height = `${cellSize}px`;
+            found = true;
+            break;
+        }
+    }
+    
+    if (!found) {
+        styleSheet.insertRule(`#gameGrid td { width: ${cellSize}px; height: ${cellSize}px; }`, styleSheet.cssRules.length);
+    }
+}
+
 function startGame(tableElement, size, pattern) {
     const gameGrid = new Grid(size, size, tableElement);
+    updateGridStyle();
 
     // defining the glider pattern for preset option.
     const gliderPattern = [
@@ -85,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sizeSlider.addEventListener('input', (e) => {
         sizeValue.textContent = e.target.value;
+        updateGridStyle();
     });
 
     sizeSlider.addEventListener('change', (e) => {
@@ -128,6 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 pattern.charAt(0).toUpperCase() + pattern.slice(1);
             gameGrid = startGame(tableElement, GRID_SIZE, pattern);
         });
+    });
+
+    // Update grid size when window is resized
+    window.addEventListener('resize', () => {
+        updateGridStyle();
     });
 });
 
