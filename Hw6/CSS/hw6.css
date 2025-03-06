@@ -32,31 +32,96 @@ p {
 .controls {
     display: flex;
     align-items: center;
-    gap: clamp(8px, 2vw, 20px);
+    gap: 15px;
     margin: 10px 0;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
 
-.back-btn {
-    margin-bottom: -10px;
-}
-
+/* Base button styles */
 .control-btn, .back-btn, .btn {
     background-color: #ff69b4;
     color: black;
     border: none;
-    padding: clamp(8px, 1.5vw, 20px) clamp(12px, 2vw, 30px);
-    margin: 0 clamp(4px, 1vw, 10px);
+    padding: 10px 20px;
+    height: 40px; /* Fixed height for all buttons */
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px; /* Minimum width for buttons */
 }
 
-.control-btn:hover, .back-btn:hover {
-    background-color: #ff1493;
+/* Specific widths for different buttons */
+.back-btn {
+    width: 150px;
+}
+
+#start {
+    width: 100px;
+}
+
+#nextGen {
+    width: 200px;
+}
+
+#reset {
+    width: 100px;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-arrow {
+    width: 120px;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 15px;
+    gap: 8px;
+}
+
+/* Size control adjustments */
+.size-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff69b4;
+    height: 40px; /* Match button height */
+}
+
+.size-control label {
+    font-weight: bold;
+    width: 100px;
+    font-size: 16px;
+}
+
+.size-control input[type="range"] {
+    width: 150px;
+}
+
+/* Only make responsive on smaller screens */
+@media (max-width: 768px) {
+    .control-btn, .back-btn, .btn {
+        padding: clamp(8px, 1.5vw, 20px) clamp(12px, 2vw, 30px);
+        height: clamp(35px, 5vw, 40px);
+        font-size: clamp(14px, 1.5vw, 16px);
+        min-width: unset;
+    }
+
+    .size-control {
+        height: clamp(35px, 5vw, 40px);
+    }
+
+    .size-control label {
+        width: auto;
+        font-size: clamp(14px, 1.5vw, 16px);
+    }
+
+    .size-control input[type="range"] {
+        width: clamp(100px, 15vw, 150px);
+    }
 }
 
 .grid-container {
@@ -166,39 +231,4 @@ p {
 
 #current-pattern {
     margin-right: 2px;
-}
-
-.size-control {
-    display: flex;
-    align-items: center;
-    gap: clamp(5px, 1vw, 10px);
-    color: #ff69b4;
-}
-
-.size-control label {
-    font-weight: bold;
-    min-width: clamp(60px, 8vw, 80px);
-    font-size: clamp(14px, 1.5vw, 16px);
-}
-
-.size-control input[type="range"] {
-    -webkit-appearance: none;
-    width: clamp(100px, 15vw, 150px);
-    height: 8px;
-    background: #333;
-    border-radius: 5px;
-    outline: none;
-}
-
-.size-control input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #ff69b4;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.size-control input[type="range"]:hover::-webkit-slider-thumb {
-    background: #ff1493;
 }
