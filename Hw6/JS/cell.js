@@ -5,9 +5,6 @@
 class Cell {
     /**
      * Creates a cell with specified position and state
-     * @param {number} row - Row position in grid
-     * @param {number} col - Column position in grid
-     * @param {number} alive - Initial state (0 = dead, 1 = alive)
      */
     constructor(row, col, alive = 0) {
         // Position
