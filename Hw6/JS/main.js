@@ -103,7 +103,7 @@ function toggleAnimation(gameGrid, startButton) {
         animate(gameGrid);
     } else {
         // Stop animation
-        startButton.textContent = 'Start';
+        startButton.textContent = 'Play';
         startButton.style.backgroundColor = '#ff69b4';
         clearTimeout(animationId);
         animationId = null;
