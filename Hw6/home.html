@@ -45,9 +45,6 @@
                 <label for="gridSize">Size: <span id="sizeValue">20</span></label>
                 <input type="range" id="gridSize" min="10" max="50" value="20" step="5">
             </div>
-
-            <!-- Save control -->
-            <button id="saveBtn" class="control-btn">Save Image</button>
         </div>
 
         <!-- Game grid -->
@@ -55,7 +52,12 @@
             <table id="gameGrid"></table>
         </div>
 
-        <!-- Hidden canvas for image generation -->
+        <!-- Save control (moved here) -->
+        <div class="save-control">
+            <button id="saveBtn" class="control-btn">Save as Image</button>
+        </div>
+
+        <!-- Hidden canvas -->
         <canvas id="saveCanvas" style="display: none;"></canvas>
     </div>
 

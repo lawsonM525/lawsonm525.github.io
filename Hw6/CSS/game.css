@@ -166,7 +166,7 @@ p {
     }
 
     #saveBtn {
-        width: auto;
+        width: 130px;
     }
 }
 
@@ -279,7 +279,12 @@ p {
     margin-right: 2px;
 }
 
-/* Add styles for the save button */
+/* Update save button styles */
+.save-control {
+    margin-top: 20px;
+    text-align: center;
+}
+
 #saveBtn {
-    width: 120px;
+    width: 150px;
 }
