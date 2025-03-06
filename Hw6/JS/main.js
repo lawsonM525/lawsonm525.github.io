@@ -4,7 +4,6 @@
 
 /**
  * Calculates the optimal cell size based on window height and grid size
- * @returns {number} The calculated size for each cell in pixels
  */
 function calculateCellSize() {
     const controls = document.querySelector('.controls');
@@ -48,10 +47,6 @@ function updateGridStyle() {
 
 /**
  * Initializes or resets the game with specified pattern
- * @param {HTMLElement} tableElement - The table element to create the grid in
- * @param {number} size - The size of the grid (size x size)
- * @param {string} pattern - The pattern to initialize ('empty', 'glider', 'replicator', 'random')
- * @returns {Grid} The initialized game grid
  */
 function startGame(tableElement, size, pattern) {
     const gameGrid = new Grid(size, size, tableElement);
