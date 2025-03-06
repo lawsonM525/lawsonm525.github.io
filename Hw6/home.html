@@ -8,14 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <button onclick="window.location.href='../startPage.html'" class="back-btn">Back to Home</button>
         <h1>Game of Life</h1>
         <p> <i>Technical : 6 hours | Creative : 3 hours</i></p>
         
         <div class="controls">
+            <button onclick="window.location.href='../startPage.html'" class="back-btn">Back to Home</button>
+
             <button id="start" class="control-btn">Start</button>
             <button id="nextGen" class="control-btn">Next Generation >>></button>
             <div class="button-group">
+
                 <button id="reset" class="btn">Reset</button>
                 <div class="dropdown">
                     <button class="btn dropdown-arrow">
@@ -29,9 +31,11 @@
                         <a href="#" data-pattern="replicator">Replicator</a>
                         <a href="#" data-pattern="random">Random</a>
                     </div>
-                    <button id="previous" class="btn">Previous</button>
+                    
                 </div>
+              
             </div>
+            <button id="previous" class="control-btn">Previous</button>
             <!--TODO: Add a button to clear the grid-->
             <!--TODO: Add a button to change the grid size-->
             <!--TODO: Add dropdown menu to change the starting pattern-->
