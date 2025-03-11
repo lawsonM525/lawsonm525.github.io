@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="CSS/game.css">
+    <meta charset="utf-8">
+    <!-- Resource: https://www.freecodecamp.org/news/javascript-2d-arrays/-->
+</head>
+<body>
+    <div class="container">
+        <h1>Game of Life</h1>
+        <p> <i>Technical : 6 hours | Creative : 2 hours</i></p>
+        
+        <div class="controls">
+            <button onclick="window.location.href='../index.html'" class="back-btn">Back to Home</button>
+
+            <button id="start" class="control-btn">Play</button>
+            <button id="nextGen" class="control-btn">Next Generation >>></button>
+            <div class="button-group">
+
+                <button id="reset" class="btn">Reset</button>
+                <div class="dropdown">
+                    <button class="btn dropdown-arrow">
+                        <span id="current-pattern">Glider</span> ▼
+                    </button>
+                    <!-- Starting options: empty, preset (glider, replicator), random-->
+            <!-- Dropdown menu for starting options-->
+                    <div class="dropdown-content">
+                        <a href="#" data-pattern="empty">Empty</a>
+                        <a href="#" data-pattern="glider">Glider</a>
+                        <a href="#" data-pattern="replicator">Replicator</a>
+                        <a href="#" data-pattern="random">Random</a>
+                    </div>
+                    
+                </div>
+              
+            </div>
+            <div class="size-control">
+                <label for="gridSize">Size: <span id="sizeValue">20</span></label>
+                <input type="range" id="gridSize" min="10" max="50" value="20" step="5">
+            </div>
+            
+        </div>
+
+        <div class="grid-container">
+            <!-- Representing the grid as an HTML table-->
+            <table id="gameGrid"></table>
+        </div>
+    </div>
+
+    <!-- Resources: https://www.freecodecamp.org/news/javascript-2d-arrays/ -->
+
+    <script src="JS/cell.js"></script>
+    <script src="JS/grid.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+</html>
+

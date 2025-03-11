@@ -1,0 +1,49 @@
+#myContainer {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#moveAllBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#resetBtn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+#addSquareBtn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+}
+
+#removeSquareBtn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+}
