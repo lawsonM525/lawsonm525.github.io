@@ -16,7 +16,7 @@
         <script src="js/Square.js"></script>
         <script src="js/AnimationManager.js"></script>
         <script>
-            // Configuration specific to this page
+            // default configuration for this page
             const squaresConfig = [
                 { color: 'red', startX: 0, startY: 0 },
                 { color: 'blue', startX: 350, startY: 350 },
@@ -28,7 +28,7 @@
             const manager = new AnimationManager('myContainer');
             manager.initialize(squaresConfig);
 
-            // Set up event listeners
+            //  event listeners
             document.getElementById('moveAllBtn').onclick = () => manager.startAnimation();
             document.getElementById('resetBtn').onclick = () => manager.reset();
             document.getElementById('addSquareBtn').onclick = () => manager.addSquare();
