@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: #ffc0cb;
+            margin-bottom: 20px;
+        }
+        .nav-button {
+            display: block;
+            margin: 0 auto 30px;
+            padding: 10px 20px;
+            background-color: #2a2a2a;
+            color: #ffc0cb;
+            border: 2px solid #ffc0cb;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #ffc0cb;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+        }
+        .project-grid {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .project-card {
+            background: #2a2a2a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-thumbnail {
+            width: 100%;
+            height: 200px;
+            background-color: #ffc0cb;
+            border-bottom: 1px solid #333;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h2 {
+            margin: 0 0 10px 0;
+            color: #ffc0cb;
+        }
+        .project-info p {
+            color: #ccc;
+            margin: 0;
+            line-height: 1.5;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Programming Highlights</h1>
+    <button class="nav-button" onclick="window.location.href='../startPage.html'">Back to Home</button>
+    <div class="project-grid">
+        <a href="GameOfLife/index.html">
+            <div class="project-card">
+                <div class="project-thumbnail"></div>
+                <div class="project-info">
+                    <h2>Game of Life</h2>
+                    <p>Conway's Game of Life simulation with play, next, reset and starter position controls. This also allows you to insert alive cells.</p>
+                </div>
+            </div>
+        </a>
+        <a href="Gravity/index.html">
+            <div class="project-card">
+                <div class="project-thumbnail"></div>
+                <div class="project-info">
+                    <h2>Gravity Simulation</h2>
+                    <p>Physics-inspired gravity simulation with interactive and customizable falling balls and realistic motion.</p>
+                </div>
+            </div>
+        </a>
+        <a href="Animation/index.html">
+            <div class="project-card">
+                <div class="project-thumbnail"></div>
+                <div class="project-info">
+                    <h2>Square Animation</h2>
+                    <p>Dynamic square animation with customizable movement and controls.</p>
+                </div>
+            </div>
+        </a>
+        <a href="CssSwitcher/index.html">
+            <div class="project-card">
+                <div class="project-thumbnail"></div>
+                <div class="project-info">
+                    <h2>Theme Switcher</h2>
+                    <p>Dynamic page showing CSS theme switching between light and dark modes.</p>
+                </div>
+            </div>
+        </a>
+        <a href="Slideshow/index.html">
+            <div class="project-card">
+                <div class="project-thumbnail"></div>
+                <div class="project-info">
+                    <h2>Image Slideshow</h2>
+                    <p>Image slideshow with navigation controls and thumbnails.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
