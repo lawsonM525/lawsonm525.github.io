@@ -1,0 +1,6 @@
+CS at Smith College
+===============
+1. Python Programming
+2. Web Development
+3. Data Structures
+4. Computer Architecture

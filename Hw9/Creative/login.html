@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form - Technical</title>
+    <!-- Link to our stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div style="width: 80%; margin: 20px auto; text-align: center;">
+        <h1>Login Form System</h1>
+        <p>A functional login system that stores users on the server</p>
+        
+        <h2>Regular Login Form</h2>
+        <!-- Regular login form -->
+        <form action="php/action_page.php" method="post" id="regularForm" onsubmit="return validateForm('regularForm')">
+            <div class="imgcontainer">
+                <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" id="uname">
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw">
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn" onclick="location.href='index.html'">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+
+        <h2>Modal Login Form</h2>
+        <!-- Button to open the modal login form -->
+        <button onclick="showLoginModal()" class="login-btn">Open Modal Login Form</button>
+        <button onclick="location.href='admin.html'" class="login-btn" style="background-color: #2196F3;">Admin Panel</button>
+
+        <!-- The Modal -->
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+            <!-- Modal Content -->
+            <form class="modal-content animate" action="php/action_page.php" method="post" id="modalForm" onsubmit="return validateForm('modalForm')">
+                <div class="imgcontainer">
+                    <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname-modal"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" id="uname-modal">
+
+                    <label for="psw-modal"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw-modal">
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <script src="js/login.js"></script>
+</body>
+</html>

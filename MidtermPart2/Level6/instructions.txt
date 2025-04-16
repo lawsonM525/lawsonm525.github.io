@@ -1,0 +1,12 @@
+At this level, you start working with the new accordion.html file from w3schools. The first task is to
+understand what it is doing and isolate the javascript code present in this file. The goal is to demonstrate that
+you understand how to define a function in javascript. If you have difficulties, mention the problem in the
+home.html file and move on to the next step.
+1. Identify the part of the existing javascript code that starts with function. This is an example of an
+anonymous function in javascript (you can read about this aspect in w3schools functions). ✅
+2. Copy the anonymous function (making sure that the parentheses close properly) and define an actual
+named function, calling it, say, toggleFunction, because it is used to toggle the text in each section of
+the accordion. ✅
+3. Replace the entire definition of the anonymous function with the name of the (now named) function,
+i.e. with toggleFunction. Notice that you do not have to call it, i.e. you do not follow it with the
+parentheses that indicate calling a function. ✅

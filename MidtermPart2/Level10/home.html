@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Midterm 1</title>
+    <link rel="stylesheet" href="css/tabs.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .explanation {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .button-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Midterm 1 Components</h2>
+
+    <!-- Tab buttons -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+        <button class="tablinks" onclick="openTab(event, 'IconBar')">Icon Bar</button>
+        <button class="tablinks" onclick="openTab(event, 'Accordion')">Accordion</button>
+        <button class="tablinks" onclick="openTab(event, 'Tabs')">Tabs</button>
+    </div>
+
+    <!-- Home tab -->
+    <div id="Home" class="tabcontent">
+        <h3>Project Overview</h3>
+        <p>In this midterm, I implemented three interactive components:</p>
+        <ul>
+            <li>An Icon Bar component for navigation</li>
+            <li>An Accordion component for organized downloads</li>
+            <li>A Tabs component for content organization</li>
+        </ul>
+        <p>You can learn more about each component in the tabs above, or check out their implementations here:</p>
+        <div class="button-group">
+            <button type="button" onclick="window.location.href='Pages/iconBar.html'">View Icon Bar</button>
+            <button type="button" onclick="window.location.href='Pages/accordion.html'">View Accordion</button>
+        </div>
+     </div>
+
+    <!-- Icon Bar tab -->
+    <div id="IconBar" class="tabcontent">
+        <h3>Icon Bar Component</h3>
+        <p>The Icon Bar is a vertical navigation component that uses Font Awesome icons. It includes:</p>
+        <ul>
+            <li>Vertical layout with fixed positioning</li>
+            <li>Nice smooth hover transitions</li>
+            <li>Icons from the font awesome library</li>
+            <li>Links to the main sections: Home, Photos, Movies, Downloads, and Print</li>
+        </ul>
+        <p>Check out the section by <button type="button" onclick="window.location.href='Pages/iconBar.html'">clicking here</button></p>
+    </div>
+
+    <!-- Accordion tab -->
+    <div id="Accordion" class="tabcontent">
+        <h3>Accordion Component</h3>
+        <p>Accordion content is collapsible. Key features:</p>
+        <ul>
+            <li>Dynamic section creation using a global variable called NRIMAGES</li>
+            <li>Smooth expand/collapse animations</li>
+            <li>Organized file downloads</li>
+        </ul>
+        <p>Accordion component makes downloading images nice and easy hehe. Check out the section by <button type="button" onclick="window.location.href='Pages/accordion.html'">clicking here</button></p>
+    </div>
+
+    <!-- Tabs tab -->
+    <div id="Tabs" class="tabcontent">
+        <h3>Tabs Component</h3>
+        <p>The Tabs system (which you're currently using) organizes content into separate views. Features:</p>
+        <ul>
+            <li>Nice clean interface</li>
+            <li>Smooth transitions between tabs</li>
+            <li>Active tab highlighting</li>
+        </ul>
+        <p>Each tab provides focused information about a specific component.</p>
+    </div>
+
+    <script src="js/tabs.js"></script>
+</body>
+</html>

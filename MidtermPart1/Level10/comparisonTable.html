@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/comparisonTable.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>Comparison Table</h2>
+<p>This version uses DOM manipulation to create elements and proper CSS selectors for the alternate row coloring.</p>
+
+<table id="comparisonTable">
+  <tr>
+    <th style="width:50%">Features</th>
+    <th>Basic</th>
+    <th>Pro</th>
+  </tr>
+</table>
+
+<!-- Import our JavaScript code from external file -->
+<script src="js/comparisonRow.js"></script>
+
+<!-- Define our data and add the rows -->
+<script>
+// Arrays containing our table data
+const FEATURES = ["Dining Hall", "In-house Kitchen", "House Community", "Air Conditioner", "Laundry"];
+const BASIC = ["fa-remove", "fa-check", "fa-check", "fa-remove", "fa-check"];
+const PRO = ["fa-check", "fa-check", "fa-check", "fa-check", "fa-check"];
+
+// Number of rows to add (limited by array length)
+const NRROWS = 5;
+
+// Add rows based on our arrays
+addMultipleRows('comparisonTable', NRROWS, [FEATURES, BASIC, PRO]);
+</script>
+
+</body>
+</html>

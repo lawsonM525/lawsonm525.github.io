@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homework 7 - Technical</title>
+    <style>
+        body {
+            font-family: 'Times New Roman';
+            margin: 0;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            margin-bottom: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+            padding: 8px 16px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #d00571;
+        }
+        .project-card {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card h2 {
+            color: #d00571;
+            margin-top: 0;
+        }
+        .project-card p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .project-link {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: #d00571;
+        }
+        .tech-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .tech-list li {
+            display: inline-block;
+            background-color: #333;
+            padding: 4px 8px;
+            margin: 4px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../home.html">Home</a>
+        <a href="../Tutorials/tutorials.html">Tutorials</a>
+        <a href="../Creative/creative.html">Creative</a>
+    </div>
+
+    <h1>Technical Projects</h1>
+
+    <div class="project-card">
+        <h2>PHP Form Validation</h2>
+        <p>A comprehensive form validation system implementing client-side and server-side validation techniques.</p>
+        <ul class="tech-list">
+            <li>PHP</li>
+            <li>HTML5</li>
+            <li>JavaScript</li>
+            <li>Regular Expressions</li>
+        </ul>
+        <a href="form_validation/index.php" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-card">
+        <h2>File Management System</h2>
+        <p>A simple file management system that allows users to upload, view, and organize files with PHP.</p>
+        <ul class="tech-list">
+            <li>PHP</li>
+            <li>File Operations</li>
+            <li>Directory Handling</li>
+            <li>MIME Types</li>
+        </ul>
+        <a href="file_system/index.php" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-card">
+        <h2>Session Management</h2>
+        <p>Implementation of user sessions and authentication system using PHP sessions.</p>
+        <ul class="tech-list">
+            <li>PHP Sessions</li>
+            <li>Authentication</li>
+            <li>Security</li>
+            <li>Cookies</li>
+        </ul>
+        <a href="sessions/index.php" class="project-link">View Project</a>
+    </div>
+</body>
+</html>

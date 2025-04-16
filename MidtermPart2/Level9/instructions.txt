@@ -1,0 +1,7 @@
+Extend the previous "accordion" page with javascript code that creates dynamically any number of
+collapsible sections (rather than having a fixed number, which is 3 in the example from w3schools). The
+number of sections is given in a global javascript variable NRIMAGES, and the sections are created by
+javascript code in a for loop. This part is very similar to the extension you did in Hw4 for the slide show. It is
+also similar in spirit to the extension you did in Part 1 of the Midterm, for the table. Clean up and, if
+necessary, fix the organization of the code, remove debugging statements, make sure you have properly
+named variables and function names and all the code is readable and tidy. ✅

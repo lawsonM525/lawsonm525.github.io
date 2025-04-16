@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gravity Animation</title>
+        <link rel="stylesheet" href="../css/gravity.css">
+    </head>
+<body>
+    <div class="controls">
+        <button onclick="window.location.href='../home.html'">Back to Home</button>
+        <button onclick="reset()">Reset</button>
+        <label>
+            Number of particles: 
+            <input type="number" min="1" max="100" value="5" id="dropdown">
+        </label>
+        <label>
+            Gravity Intensity:
+            <input type="range" min="0" max="20" value="5" id="gravitySlider">
+            <span id="gravityValue">0.5</span>
+        </label>
+        <label>
+            <input type="checkbox" id="traceCheckbox" onchange="updateTrace()"> Keep Trace
+        </label>
+    </div>
+    <canvas id="myCanvas"></canvas>  
+    <script src="../js/gravity.js"></script>
+    <script>
+        var c = document.getElementById("myCanvas");
+        function resizeCanvas() {
+            c.width = window.innerWidth - 40;
+            c.height = window.innerHeight - 150;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const ctx = c.getContext("2d");
+        let points = [];
+        let keepTrace = false;
+        let currentAnimation = null;
+
+        document.getElementById("dropdown").oninput = reset;
+        document.getElementById("gravitySlider").oninput = function() {
+            const value = this.value / 10;
+            document.getElementById("gravityValue").textContent = value;
+            updateGravity(value);
+        };
+        
+        initializePoints();
+    </script>
+</body>
+</html>

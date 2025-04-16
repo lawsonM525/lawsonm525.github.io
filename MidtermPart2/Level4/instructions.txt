@@ -1,0 +1,12 @@
+Extend the previous level so that when you click on the Photo icon it will take you to the slide show from
+your Hw4, properly integrated, as described below. The goal is to demonstrate that you know how to work
+with relative file paths. If you have difficulty with some of the paths, mention the problem in the home.html file
+and move on to the next step.
+1. Copy the html of your Slide Show homework (Hw4) into the Pages folder, rename it photos.html. ✅
+2. Copy its css file into the css folder, name it photos.css and modify its path in the photos.html file. ✅
+3. Copy the pictures you used in the slide show into a folder named images, located directly under the
+current Level folder (i.e. where the css and Pages folders reside). Modify the photos.html file to reflect
+the corresponding paths to the images. ✅
+4. Similarly, create a folder js for the javascript code used by the slide show, rename it as photos.js (to
+distinguish from future javascript files that will be placed in this folder) and update the path to the
+photos.js file in the photos.html file. ✅

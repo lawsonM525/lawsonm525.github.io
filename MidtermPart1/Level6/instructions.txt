@@ -1,0 +1,3 @@
+Extend the previous level so that you can add a number of rows specified by a javascript global variable
+NRROWS. E.g. you can have NRROWS = 10. Use a for loop to add that many rows to the table. For now,
+each row can have the same entry in the FEATURES, BASIC and PRO columns (next level will handle this). ✅

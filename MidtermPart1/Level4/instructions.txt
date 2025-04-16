@@ -1,0 +1,3 @@
+Extend the previous level so that the code to add a new row to the table is now in a javascript function
+addRow, which takes as parameters the desired options to be placed on a row in the BASIC and PRO
+columns, and inserts the row into the innerHTML of the table. ✅

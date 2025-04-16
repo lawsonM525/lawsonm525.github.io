@@ -1,0 +1,31 @@
+Copy the Level2 folder (containing as much as you could do for Level2, but correct in the sense that the html
+page can be opened and viewed in a browser), rename it as Level3 and modify the files as described below.
+
+NOTE:From this level on, I will not repeat these instructions and assume that you have copied a previously
+finished level in which you will work out the required modifications for each specific level.
+
+Notice that in the W3schools example, in each row there is a green check sign in the last column (with header
+Pro). In the Basic colum, however, you have either a red-cross or a green-check sign. Your first task is to
+generate one more such row in the table, using javascript. Start by removing all rows in the table, except the
+row containing the table header and the first row with "Sample text". Your task is now to insert a second row
+with "Sample text", but not manually (i.e. not by directly editing the html file). Instead, you will be using
+javascript, according to the following instructions. Insert javascript code in your html file doing the
+following:
+Declare a variable named ROW, which contains the entire string that creates a row in the table (other
+than the header row), but slightly modified: instead of the name of the css class that indicates whether a
+check or cross sign should appear in the row, you will place the string CHECKCROSSBASIC (for
+column Basic) and CHECKCROSSPRO (for column Pro). ✅
+NOTE: Make sure you do not have hidden characters in this string, such as new line or tabs that could
+be added if you just copy and paste from the html file. Better to delete those hidden characters or, if
+you want, you can use the "\n" for a new line, etc. ✅
+Immediately print this string using an alert box. ✅
+Add javascript code to create (in a new variable) the html string describing a new table row. You do
+this by replacing the strings CHECKCROSSBASIC and CHECKCROSSBASIC in the ROW variable
+with the css class name for a check, resp. a cross, and storing the result in a new variable. Use alert to
+print the contents of this variable. ✅
+Finally, append the new row to the innerHTML of the table, using DOM commands. Hint: You may
+need to add an id to the table tag and use the DOM command to "get the element by id", then get its
+"innerHTML". If you forgot how to do this, search in W3schools for document.getElementById and
+innerHTML, and follow the examples. ✅
+When done, comment out the alert commands that were used while developing and debugging your
+code. ✅

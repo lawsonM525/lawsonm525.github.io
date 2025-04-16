@@ -1,0 +1,6 @@
+For top credit, I leave it to you to figure out the Tabs from w3schools and integrate it in some creative manner
+in this midterm portfolio. For instance, you could do something similar to Level 9 but with tabs instead of
+accordion, and have it linked from the Print or some other suitable icon in the icon bar. ✅
+
+Creative implementation of Tabs: 
+Used tabs to explain the different components of the midterm.

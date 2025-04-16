@@ -1,0 +1,7 @@
+From W3schools, HowTo: read and try three examples:
+1. Example showing how to make an Icon Bar. Copy the code in a file iconBar.html in the Level1 folder. ✅
+2. Example showing how to make a collection of sections with collapsible content, called an Accordion.
+You can work either with the first example on this page, or with the example at the bottom of the page
+(animated accordion): they differ only in the css. Copy the code in a file accordion.html in the Level1
+folder. ✅
+3. Example showing how to make Tabs. Copy the code in a file tabs.html in the Level1 folder. ✅

@@ -1,0 +1,2 @@
+Same as previous level, but define and use a function to add all rows (which should invoke in a for loop the
+function to add a single row). ✅ (already satisfied in level 7, by my understanding)

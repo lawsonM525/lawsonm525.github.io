@@ -1,0 +1,25 @@
+Copy the Level2 folder, rename it as Level3 and modify the files as described below.
+NOTE:From this level on, I will not repeat these instructions and assume that you have copied a previously
+finished level in which you will work out the required modifications for each specific level.
+At this level you will work primarily with the IconBar page. The goal is to demonstrate that you can read and
+understand an example from w3schools, and modify it based on some independent explorations using
+resources available on the internet.
+
+1. In the level folder, create an "entry point" html page, name it home.html (not index.html). ✅
+2. Create a folder named Pages. Copy in it all the html pages you currently have in your level folder,
+making sure you update all the paths to other files (such as css files). ✅
+3. In the iconBar.html file, add a link to the home.html page for the Home icon. ✅
+4. On the home.html page, add a sentence or two explaining (the best you can) the role of the link tag in
+the head of the iconBar.html file, what kind of information you think it contributes to the html
+document and which part of the html document might be using information from the externally linked
+file. ✅
+5. Open the externally linked file from the previous step and do a search in it for the names of the five
+icons: if you figured out where they are reflected in the iconBar.html file, then you will find them (just
+to convince yourself that they come from this external file). Then, scan this external file for some other
+possible icons that might be useful. I suggest: fa-photo, fa-movie, fa-download, fa-print. Then, edit the
+iconBar.html file and delete the icons for email and globe and add these new icons (for photos, movies,
+download and print) to the icon bar. ✅
+6. Notice the change in the browser: the bar extends on a second row. Your task is to make the appropriate
+modification in the css file, so that all these icons show on one row. ??? used a vertical bar.
+7. In the Pages folder, create dummy html files (with suggestive names) for all the icons, so that when you
+click on an icon, it takes you to a separate file. ✅

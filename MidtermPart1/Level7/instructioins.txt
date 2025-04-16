@@ -1,0 +1,3 @@
+Extend the previous level so that each row has its own entries in the three colums of the table. You will get
+these entries from three javascript arrays (stored in global variables): FEATURES, BASIC and PRO. For
+instance, if NRROWS = 2, you might have FEATURES = ["Mary","Alice"], BASIC = ["fa-check","faremove"] and PRO = ["fa-remove","fa-check"]. ✅

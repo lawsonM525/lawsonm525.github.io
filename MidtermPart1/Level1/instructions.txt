@@ -1,0 +1,5 @@
+From W3schools, read and try the example showing how to make a nice Comparison Table. Copy the code in
+a file comparisonTable.html in the Level1 folder.✅
+Check that you can see it on your computer, while running MAMP.✅
+NOTE: From this level on, I will not repeat this last step and assume that you have checked that each
+submitted level shows up correctly in a browser. 

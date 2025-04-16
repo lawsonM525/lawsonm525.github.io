@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Keeping the external fontawesome CSS because this is what is used to design the cross and checks -->
+<link rel="stylesheet" href="css/comparisonTable.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>Comparison Table</h2>
+<p>The link tags in the head section serve two main purposes:</p>
+<ol> 
+    <li>The Font Awesome link provides icons and symbols (like the check and cross marks in our table) through the external online CSS library.</li>
+    <li>Our local CSS file (comparisonTable.css) defines the table's appearance including colors, spacing, and row alternation patterns.</li>
+</ol>
+<p>These style definitions are used by the table elements for formatting themselves properly.</p>
+
+<table id="comparisonTable">
+  <tr>
+    <th style="width:50%">Features</th>
+    <th>Basic</th>
+    <th>Pro</th>
+  </tr>
+  <tr>
+    <td>Sample text</td>
+    <td><i class="fa fa-remove"></i></td>
+    <td><i class="fa fa-check"></i></td>
+  </tr>
+</table>
+
+<!-- Import our JavaScript code from external file -->
+<script src="js/comparisonRow.js"></script>
+
+<!-- Test the multiple row addition -->
+<script>
+
+// Global variable for number of rows
+const NRROWS = 100;
+
+addMultipleRows('comparisonTable', NRROWS);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {margin:0}
+
+/* Icon bar container */
+.icon-bar {
+    width: 90px;
+    background-color: #555;
+}
+
+/* Links in the icon bar */
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+/* Add a hover effect */
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+/* Active/current link */
+.icon-bar a.active {
+    background-color: #04AA6D;
+}

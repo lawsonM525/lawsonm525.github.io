@@ -1,0 +1,4 @@
+Extend the previous level so that the javascript toggleFunction function is placed in an external file (call it
+accordion.js), placed in the js folder, and which is imported into the html using a script tag. The goal is to
+demonstrate that you understand how to use external javascript files and use proper paths to locate them. If
+you have difficulties, mention the problem in the home.html file and move on to the next step. (did this in level 6) ✅

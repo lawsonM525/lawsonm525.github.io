@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Keeping the external fontawesome CSS because this is what is used to design the cross and checks -->
+<link rel="stylesheet" href="css/comparisonTable.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>Comparison Table</h2>
+<p>The link tags in the head section serve two main purposes:</p>
+<ol> 
+    <li>The Font Awesome link provides icons and symbols (like the check and cross marks in our table) through the external online CSS library.</li>
+    <li>Our local CSS file (comparisonTable.css) defines the table's appearance including colors, spacing, and row alternation patterns.</li>
+</ol>
+<p>These style definitions are used by the table elements for formatting themselves properly.</p>
+
+<table id="comparisonTable">
+  <tr>
+    <th style="width:50%">Name</th>
+    <th>Part 1</th>
+    <th>Part 2</th>
+  </tr>
+  <tr>
+    <td>Sample text</td>
+    <td><i class="fa fa-remove"></i></td>
+    <td><i class="fa fa-check"></i></td>
+  </tr>
+</table>
+
+<!-- using internal JS script because instructions said "Insert javascript code in your html file"-->
+<script>
+// String template for developing new rows
+const ROW = '<tr><td>Sample text</td><td><i class="fa CHECKCROSSBASIC"></i></td><td><i class="fa CHECKCROSSPRO"></i></td></tr>';
+//alert("Template row: " + ROW);
+
+
+// Function to add a new row with specified icons
+function addNewRow() {
+    // Create new row by replacing placeholders with actual classes
+    const newRow = ROW.replace('CHECKCROSSBASIC', 'fa-remove').replace('CHECKCROSSPRO', 'fa-check');
+    
+    const table = document.getElementById('comparisonTable');
+    table.innerHTML += newRow;
+    //alert("Generated row: " + newRow);
+}
+
+
+
+// adding the new row when the page loads
+addNewRow();
+</script>
+
+</body>
+</html>

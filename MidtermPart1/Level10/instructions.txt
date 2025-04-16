@@ -1,0 +1,4 @@
+If you developed the code as described in the sequence of levels, you may not get alternate colors for the
+newly added rows in your table. For top credit, I leave it to you to figure out how to do this. Hint: use DOM
+to add elements to the table element, rather than the method described here, which works by manipulating a
+string and sets the innerHTML. ✅

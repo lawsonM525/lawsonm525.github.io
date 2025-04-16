@@ -1,0 +1,5 @@
+Copy the three html files from Level 1 into Level 2. For each file, extract its css into a separate file. They will
+be have the same name as the html file, but with a css file extension. For instance, the css file for
+accordion.html will be named accordion.css, etc. These three files should be located in a folder named css in
+Level2. ✅
+NOTE: From this level on, make sure you have all the necessary css style files in this separate folder.

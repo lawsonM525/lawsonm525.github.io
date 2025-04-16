@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Vertical icon bar */
+.icon-bar {
+    width: 90px;
+    background-color: #555;
+    position: fixed;
+    height: 100%;
+}
+
+/* Icon links */
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    color: white;
+    font-size: 36px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.icon-bar a:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}

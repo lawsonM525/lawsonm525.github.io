@@ -1,0 +1,35 @@
+/* Table styling */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: center;
+    padding: 16px;
+}
+
+th:first-child, td:first-child {
+    text-align: left;
+}
+
+/* Alternating row colors - applies to ALL tr elements except the header */
+/* Source: https://www.w3schools.com/html/html_table_styling.asp */
+tr:not(:first-child) {
+    background-color: white;
+}
+
+tr:not(:first-child):nth-child(even) {
+    background-color: #ffb0ca;
+}
+
+/* Icon colors */
+.fa-check {
+    color: blue;
+}
+
+.fa-remove {
+    color: red;
+}

@@ -1,0 +1,15 @@
+Copy the html from Level 1. Extract the css into a separate comparisonTable.css file, located in a folder
+named css in Level2. ✅
+NOTE: From this level on, make sure you have the css style file in this separate folder. ✅
+To do:
+1. Figure out how the red cross and the green check sign have been encoded in html/css to show up in the
+table. ✅
+2. Replace the color of the green check sign to be blue. ✅
+3. Replace the headers of the table with Name, Part 1 and Part 2, instead of Feature, Basic and Pro. ✅
+4. Under the title, add a sentence or two explaining (the best you can) the role of the link tag in the head
+of the html file, what kind of information you think it contributes to the html document and which part
+of the html document might be using information from the linked file. ✅
+5. Figure out how the odd and even rows of the table have been encoded in html to show up in different
+shades in the table. ✅
+6. Replace the colors of the alternate rows with two choices of your own (e.g. white and light yellow). ✅ 
+(I did white and light pink) ✅

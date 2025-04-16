@@ -1,0 +1,4 @@
+Integrate one of the animations created in previous labs and homework and link it from the Movies icon.
+Compared to the previous level, here you will have fewer file paths to modify. The goal is to demonstrate that
+you can integrate previous code into a required organization, with separate css and js folders. If you have
+difficulties, mention the problem in the home.html file and move on to the next step. ✅

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dose of Pink</title>
+    <link rel="stylesheet" href="../css/photos.css">
+</head>
+<body>
+
+<h2>✨ Your Cutesy Daily Dose of Pink ✨</h2>
+
+<button class="home-button" onclick="goHome()">Back to Home</button>
+
+<div class="container">
+    <div class="mySlides">
+        <div class="numbertext">1 / 7</div>
+        <img src="../images/img1.jpg" style="height:70vh; object-fit:cover;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">2 / 7</div>
+        <img src="../images/img2.jpg" style="height:70vh; object-fit:cover;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">3 / 7</div>
+        <img src="../images/img3.jpg" style="height:70vh; object-fit:cover;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">4 / 7</div>
+        <img src="../images/img4.jpg" style="height:70vh; object-fit:cover;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">5 / 7</div>
+        <img src="../images/img5.jpg" style="height:70vh; object-fit:cover;">     
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">6 / 7</div>
+        <img src="../images/img6.jpg" style="height:70vh; object-fit:cover;">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">7 / 7</div>
+        <img src="../images/img7.jpg" style="height:70vh; object-fit:cover;">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <img class="demo cursor" src="../images/img1.jpg" style="height:10vh; object-fit:cover;" onclick="currentSlide(1)" alt="Pink Paint">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="../images/img2.jpg" style="height:10vh; object-fit:cover;" onclick="currentSlide(2)" alt="Pink Sky">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="../images/img3.jpg" style="height:10vh; object-fit:cover;" onclick="currentSlide(3)" alt="Pink Wall">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="../images/img4.jpg" style="height:10vh; object-fit:cover;" onclick="currentSlide(4)" alt="Pink Night Sky"> 
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="../images/img5.jpg" style="height:10vh; object-fit:cover;" onclick="currentSlide(5)" alt="Pink Heart">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="../images/img6.jpg" style="height:10vh; object-fit:cover;" onclick="currentSlide(6)" alt="Pink Clouds">            
+        </div>
+    </div>
+</div>
+
+<p> <i> <b>Note:</b> These images are copyright free image from pexels.com . </i> </p>
+
+<script src="../js/photos.js"></script>
+
+</body>
+</html>
