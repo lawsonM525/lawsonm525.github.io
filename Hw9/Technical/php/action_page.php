@@ -1,12 +1,12 @@
 <?php
-// Process login form data and save user information to a file
-// Based on Lab 1 and Lab 2 requirements
+// process login form data and save user info to a file
+// based on lab 1 and lab 2 requirements
 
-// Define the path for storing user data
+// path for storing user data
 $output_dir = "../output/";
 $users_file = $output_dir . "users.txt";
 
-// Create output directory if it doesn't exist
+// make output dir if it's not there
 if (!is_dir($output_dir)) {
     mkdir($output_dir, 0755, true);
 }

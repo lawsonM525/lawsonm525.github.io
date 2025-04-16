@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y2K Admin Zone</title>
+    <title>Y2K Admin Zone - JSON Edition</title>
     <!-- Y2K Theme CSS -->
     <link rel="stylesheet" href="css/y2k.css">
     <!-- Font Awesome for icons -->
@@ -13,8 +13,8 @@
     <div class="y2k-container">
         <div class="y2k-header">
             <h1>Admin Zone</h1>
-            <div class="y2k-badge">2K25</div>
-            <p>Welcome to the CyberAdmin control center</p>
+            <div class="y2k-badge">JSON</div>
+            <p>Welcome to the CyberAdmin control center - JSON Edition</p>
         </div>
         
         <div class="glitter-line"></div>
@@ -29,7 +29,7 @@
             <div class="y2k-card">
                 <h3>System Status</h3>
                 <div class="stats-number"><span class="status-indicator status-online"></span> ONLINE</div>
-                <div class="stats-label blink">Monitoring Active</div>
+                <div class="stats-label blink">JSON Database Active</div>
             </div>
             
             <div class="y2k-card">
@@ -42,6 +42,9 @@
         <div class="buttons-container">
             <button class="y2k-button" onclick="loadUsers()">
                 <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+            <button class="y2k-button" onclick="viewJsonRaw()">
+                <i class="fas fa-code"></i> View Raw JSON
             </button>
             <button class="y2k-button secondary" onclick="deleteAllUsers()">
                 <i class="fas fa-trash-alt"></i> Reset Users
@@ -60,7 +63,8 @@
                         <th>#</th>
                         <th>Username</th>
                         <th>Registration Date</th>
-                        <th>Login Status</th>
+                        <th>Last Login</th>
+                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -70,10 +74,22 @@
             </table>
         </div>
         
+        <!-- JSON View Modal -->
+        <div id="jsonModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:100;">
+            <div style="position:relative; width:80%; max-width:800px; margin:50px auto; background-color:var(--black); border:3px solid var(--hot-pink); border-radius:10px; padding:20px; box-shadow:0 0 15px var(--hot-pink);">
+                <button onclick="closeJsonView()" style="position:absolute; top:10px; right:10px; background:none; border:none; color:var(--hot-pink); font-size:24px; cursor:pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 style="text-align:center; margin-bottom:20px;">Raw JSON Data</h2>
+                <div class="glitter-line"></div>
+                <pre id="jsonContent" style="background-color:rgba(0,0,0,0.7); border:1px solid var(--hot-pink); padding:15px; border-radius:5px; overflow:auto; color:var(--white); max-height:400px; font-family:monospace;">Loading JSON data...</pre>
+            </div>
+        </div>
+        
         <div class="glitter-line"></div>
         
         <div class="y2k-footer">
-            <p>Thank you for being an amazing admin!!!</p>
+            <p> Thank you for being a SUPERB admin!!!</p>
         </div>
     </div>
 
@@ -92,11 +108,12 @@
                 // Update last login if users exist
                 if (response.count > 0) {
                     var lastUser = response.users[response.users.length - 1];
-                    var date = new Date(lastUser.date);
+                    var lastLoginDate = new Date(lastUser.last_login || lastUser.date);
+                    
                     document.getElementById("lastLogin").textContent = 
-                        padZero(date.getHours()) + ":" + padZero(date.getMinutes());
+                        padZero(lastLoginDate.getHours()) + ":" + padZero(lastLoginDate.getMinutes());
                     document.getElementById("lastLoginDate").textContent = 
-                        padZero(date.getMonth() + 1) + "/" + padZero(date.getDate()) + "/" + date.getFullYear();
+                        padZero(lastLoginDate.getMonth() + 1) + "/" + padZero(lastLoginDate.getDate()) + "/" + lastLoginDate.getFullYear();
                 }
                 
                 // Clear existing table rows
@@ -111,19 +128,21 @@
                     
                     var cellNum = row.insertCell(0);
                     var cellUsername = row.insertCell(1);
-                    var cellDate = row.insertCell(2);
-                    var cellStatus = row.insertCell(3);
-                    var cellActions = row.insertCell(4);
+                    var cellRegDate = row.insertCell(2);
+                    var cellLastLogin = row.insertCell(3);
+                    var cellStatus = row.insertCell(4);
+                    var cellActions = row.insertCell(5);
                     
                     cellNum.textContent = i + 1;
                     cellUsername.textContent = user.username;
-                    cellDate.textContent = formatDate(user.date);
+                    cellRegDate.textContent = formatDate(user.date);
+                    cellLastLogin.textContent = formatDate(user.last_login || user.date);
                     
-                    // Randomly assign online/offline status for demonstration
-                    var isOnline = Math.random() > 0.7;
-                    cellStatus.innerHTML = isOnline ? 
-                        '<span class="status-indicator status-online"></span> Online' : 
-                        '<span class="status-indicator status-offline"></span> Offline';
+                    // Set status (use the one from JSON or default to a random one for demo)
+                    var status = user.status || (Math.random() > 0.7 ? 'active' : 'inactive');
+                    var statusClass = status === 'active' ? 'status-online' : 'status-offline';
+                    cellStatus.innerHTML = '<span class="status-indicator ' + statusClass + '"></span> ' + 
+                                          (status === 'active' ? 'Online' : 'Offline');
                     
                     // Add action buttons
                     cellActions.innerHTML = 
@@ -136,6 +155,43 @@
         // Open a GET request to the PHP file that reads users
         xhttp.open("GET", "php/get_users.php", true);
         xhttp.send();
+    }
+    
+    // Function to view raw JSON data
+    function viewJsonRaw() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var jsonData = JSON.parse(this.responseText);
+                
+                // Fetch the actual users.json file
+                var xhr2 = new XMLHttpRequest();
+                xhr2.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        try {
+                            // Format the JSON for display
+                            var formattedJson = JSON.stringify(JSON.parse(this.responseText), null, 2);
+                            document.getElementById('jsonContent').textContent = formattedJson;
+                        } catch (e) {
+                            document.getElementById('jsonContent').textContent = 'Error parsing JSON: ' + e.message;
+                        }
+                        
+                        // Show the modal
+                        document.getElementById('jsonModal').style.display = 'block';
+                    }
+                };
+                xhr2.open("GET", "users.json", true);
+                xhr2.send();
+            }
+        };
+        
+        xhttp.open("GET", "php/get_users.php", true);
+        xhttp.send();
+    }
+    
+    // Function to close JSON view
+    function closeJsonView() {
+        document.getElementById('jsonModal').style.display = 'none';
     }
     
     // Function to search users
@@ -160,7 +216,13 @@
     
     // Function to format date
     function formatDate(dateString) {
+        if (!dateString) return 'N/A';
+        
         var date = new Date(dateString);
+        
+        // Check if date is valid
+        if (isNaN(date.getTime())) return dateString;
+        
         return padZero(date.getMonth() + 1) + "/" + 
                padZero(date.getDate()) + "/" + 
                date.getFullYear() + " " + 
@@ -185,13 +247,13 @@
         }
     }
     
-    // Function to delete all users (placeholder)
+    // Function to delete all users
     function deleteAllUsers() {
-        if (confirm("WARNING: This will delete ALL user data. Are you absolutely sure?")) {
+        if (confirm("WARNING: This will delete ALL user data from the JSON file. Are you absolutely sure?")) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    alert("All users have been deleted successfully.");
+                    alert("All users have been deleted successfully from the JSON database.");
                     loadUsers(); // Refresh the table
                 }
             };
@@ -204,6 +266,14 @@
     
     // Load users when the page loads
     window.onload = loadUsers;
+    
+    // Close JSON modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('jsonModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
     </script>
 </body>
 </html>

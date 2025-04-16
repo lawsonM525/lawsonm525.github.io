@@ -1,0 +1,320 @@
+/* Y2K-themed Admin Panel Stylesheet - Black and Pink theme */
+
+/* Global Y2K Styles */
+:root {
+  --hot-pink: #ff66c4;
+  --neon-pink: #ff00ff;
+  --black: #000000;
+  --light-pink: #ffccf9;
+  --gray: #333333;
+  --light-gray: #f0f0f0;
+  --white: #ffffff;
+  --y2k-purple: #cc66ff;
+  --y2k-blue: #33ccff;
+}
+
+@font-face {
+  font-family: 'VCR';
+  src: url('https://cdn.jsdelivr.net/gh/delph-in/docs@gh-pages/erg/fonts/vcr-osd-mono.ttf') format('truetype');
+}
+
+body {
+  font-family: 'VCR', 'Courier New', monospace;
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="black"/><circle cx="10" cy="10" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="30" cy="40" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="50" cy="20" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="70" cy="50" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="90" cy="30" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="20" cy="80" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="40" cy="60" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="60" cy="90" r="1" fill="%23ff66c4" opacity="0.4"/><circle cx="80" cy="70" r="1" fill="%23ff66c4" opacity="0.4"/></svg>');
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 var(--neon-pink);
+  color: var(--white);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.y2k-container {
+  width: 85%;
+  margin: 2rem auto;
+  border: 3px solid var(--hot-pink);
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--black) 25%, #1a1a1a 100%);
+  padding: 2rem;
+  box-shadow: 0 0 15px var(--hot-pink);
+  position: relative;
+  overflow: hidden;
+}
+
+.glitter-line {
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--hot-pink), 
+    var(--neon-pink), 
+    var(--y2k-purple), 
+    var(--y2k-blue), 
+    var(--y2k-purple), 
+    var(--neon-pink), 
+    var(--hot-pink));
+  margin: 1.5rem 0;
+  animation: sparkle 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes sparkle {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+.y2k-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.y2k-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--neon-pink);
+  color: var(--white);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transform: rotate(15deg);
+  box-shadow: 0 0 10px var(--neon-pink);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border: 2px solid var(--white);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: rotate(15deg) scale(1); }
+  to { transform: rotate(15deg) scale(1.1); }
+}
+
+/* Control Panel */
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.y2k-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--hot-pink);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.y2k-card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.stats-number {
+  font-size: 2.5rem;
+  color: var(--hot-pink);
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--neon-pink);
+  margin: 0.5rem 0;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: var(--light-pink);
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.y2k-button {
+  background: linear-gradient(to right, var(--hot-pink), var(--neon-pink));
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  font-family: 'VCR', 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px var(--hot-pink);
+  margin: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.y2k-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.y2k-button.secondary {
+  background: linear-gradient(to right, var(--gray), #555555);
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+/* User Table */
+.user-table-container {
+  margin-top: 2rem;
+  background-color: rgba(10, 10, 10, 0.8);
+  border: 2px solid var(--hot-pink);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--white);
+}
+
+.user-table th {
+  background-color: var(--hot-pink);
+  color: var(--black);
+  text-transform: uppercase;
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.user-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(255, 102, 196, 0.2);
+}
+
+.user-table tr:hover {
+  background-color: rgba(255, 102, 196, 0.1);
+}
+
+/* User Actions */
+.action-icon {
+  color: var(--hot-pink);
+  cursor: pointer;
+  margin: 0 5px;
+  transition: transform 0.2s;
+}
+
+.action-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Search Box */
+.search-box {
+  background-color: var(--black);
+  border: 2px solid var(--hot-pink);
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-family: 'VCR', 'Courier New', monospace;
+}
+
+.search-box::placeholder {
+  color: rgba(255, 102, 196, 0.6);
+}
+
+.search-box:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--hot-pink);
+}
+
+/* Footer */
+.y2k-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--light-pink);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .y2k-container {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .control-panel {
+    flex-direction: column;
+  }
+  
+  .y2k-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Animations */
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/* Y2K Status indicator */
+.status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-online {
+  background-color: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.status-offline {
+  background-color: #ff0000;
+  box-shadow: 0 0 5px #ff0000;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hot-pink);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-pink);
+}

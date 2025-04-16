@@ -1,38 +1,38 @@
 <?php
-// This file handles AJAX requests to retrieve user data from the users.txt file
+// handles ajax requests to get users from users.txt
 header('Content-Type: application/json');
 
-// Define the path to the users.txt file
+// where's the user data?
 $users_file = "../output/users.txt";
 
-// Initialize response array
+// empty response to start with
 $response = array(
     'count' => 0,
     'users' => array()
 );
 
-// Check if the file exists
+// check if file exists
 if (file_exists($users_file)) {
-    // Open the file
+    // open the file
     $file = fopen($users_file, "r");
     
     if ($file) {
         $count = 0;
         $users = array();
         
-        // Read each line of the file
+        // read each line of the file
         while (($line = fgets($file)) !== false) {
             $count++;
             
-            // Parse the line (format: username,password,date)
+            // parse the line (format: username,password,date)
             $data = explode(",", trim($line));
             
             if (count($data) >= 3) {
                 $username = $data[0];
-                // Skip the password for security
+                // skip the password for security
                 $date = $data[2];
                 
-                // Add user to the array
+                // add user to the array
                 $users[] = array(
                     'username' => $username,
                     'date' => $date
@@ -40,15 +40,15 @@ if (file_exists($users_file)) {
             }
         }
         
-        // Close the file
+        // close the file
         fclose($file);
         
-        // Update the response
+        // update the response
         $response['count'] = $count;
         $response['users'] = $users;
     }
 }
 
-// Return the JSON response
+// return the json response
 echo json_encode($response);
 ?>

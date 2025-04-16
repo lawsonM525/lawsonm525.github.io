@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Access - JSON Edition</title>
+    <!-- Y2K Theme CSS -->
+    <link rel="stylesheet" href="css/y2k.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .admin-login-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            border: 3px solid var(--hot-pink);
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--black) 25%, #1a1a1a 100%);
+            box-shadow: 0 0 15px var(--hot-pink);
+            text-align: center;
+        }
+        
+        .admin-login-title {
+            margin-bottom: 1.5rem;
+        }
+        
+        .admin-login-title h1 {
+            font-size: 2.2rem;
+        }
+        
+        .admin-icon {
+            font-size: 3rem;
+            color: var(--hot-pink);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px var(--neon-pink);
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--hot-pink);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            font-family: 'VCR', 'Courier New', monospace;
+            text-align: center;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            box-shadow: 0 0 8px var(--neon-pink);
+        }
+        
+        .admin-login-btn {
+            width: 100%;
+            background: linear-gradient(to right, var(--hot-pink), var(--neon-pink));
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            padding: 1rem;
+            font-family: 'VCR', 'Courier New', monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px var(--hot-pink);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .admin-login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px var(--neon-pink);
+        }
+        
+        .password-hint {
+            color: var(--hot-pink);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        .back-link {
+            margin-top: 1.5rem;
+        }
+        
+        .back-link a {
+            color: var(--hot-pink);
+            text-decoration: none;
+        }
+        
+        .back-link a:hover {
+            color: var(--neon-pink);
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #ff0000;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .blink-slow {
+            animation: blink 2s steps(2, start) infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-login-container">
+        <div class="admin-login-title">
+            <div class="admin-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h1>Admin Access</h1>
+            <div class="glitter-line"></div>
+            <p style="color: var(--hot-pink); margin-top: 0.5rem;">JSON Database Access Control</p>
+        </div>
+        
+        <div id="errorMessage" class="error-message blink-slow">Incorrect password!</div>
+        
+        <div>
+            <input type="password" id="adminPassword" class="input-field" placeholder="Enter Admin Password">
+            <button id="loginBtn" class="admin-login-btn">Access Admin Panel</button>
+            <div class="password-hint">Hint: password is password</div>
+        </div>
+        
+        <div class="glitter-line"></div>
+        
+        <div class="back-link">
+            <a href="login.html"><i class="fas fa-arrow-left"></i> Back to Login</a>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', checkPassword);
+        document.getElementById('adminPassword').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        function checkPassword() {
+            const password = document.getElementById('adminPassword').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (password === 'password') {
+                // Correct password, redirect to admin panel
+                window.location.href = 'admin.html';
+            } else {
+                // Incorrect password, show error
+                errorMessage.style.display = 'block';
+                setTimeout(function() {
+                    errorMessage.style.display = 'none';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

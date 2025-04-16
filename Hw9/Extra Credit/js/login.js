@@ -1,21 +1,21 @@
-// js for login forms
+// JavaScript for the login forms
 
-// grab the modal element
+// Get the modal element
 var modal = document.getElementById('id01');
 
-// close modal when clicking outside
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
-// show the modal
+// Function to show the modal
 function showLoginModal() {
   document.getElementById('id01').style.display = 'block';
 }
 
-// quick form check
+// Simple form validation
 function validateForm(formId) {
   const form = document.getElementById(formId);
   const username = form.querySelector('input[name="uname"]').value.trim();

@@ -1,16 +1,16 @@
-// JavaScript for the Modal Login Form
+// js for modal login form
 
-// Get the modal element
+// grab the modal element
 var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
+// close modal when clicking outside
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
-// Function to show the modal
+// show the modal
 function showLoginModal() {
   document.getElementById('id01').style.display = 'block';
 }
