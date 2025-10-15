@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WE'RE LIVE BABY!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Arial Black', sans-serif;
+      text-align: center;
+      animation: bgFlash 1s infinite;
+    }
+
+    h1 {
+      font-size: 5rem;
+      margin-top: 20vh;
+      animation: pulse 0.5s infinite;
+      text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); color: #ffffff; }
+      50% { transform: scale(1.1); color: #ff00ff; }
+      100% { transform: scale(1); color: #ffffff; }
+    }
+
+    @keyframes bgFlash {
+      0% { background-color: black; }
+      50% { background-color: #1a001a; }
+      100% { background-color: black; }
+    }
+
+    .gif-container {
+      margin-top: 30px;
+    }
+
+    .gif-container img {
+      width: 400px;
+      border: 5px solid white;
+      border-radius: 10px;
+      box-shadow: 0 0 25px #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 OUR SITE IS LIVE! 🔥</h1>
+  <div class="gif-container">
+    <img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" alt="Party Time">
+  </div>
+</body>
+</html>
